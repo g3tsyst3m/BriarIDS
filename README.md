@@ -13,3 +13,9 @@ Raspian - Jessie
 Can this be ported to other OSes?
 =================================
 Yup.  Try it out in A VM running the latest Debian or Ubuntu.  It should cooperate.  If not give me some issue requests to mess around with.
+What Router(s) have you tested this with?
+=========================================
+Just the Linksys E1200v2 thus far
+What firmware of Tomato are you using?
+======================================
+tomato-E1200v2-NVRAM64K-1.28.RT-N5x-MIPSR2-132-Max.bin
