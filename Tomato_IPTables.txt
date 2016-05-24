@@ -1,0 +1,10 @@
+#/sbin/modprobe ipt_ROUTE
+#/usr/sbin/iptables -t mangle -I PREROUTING -i vlan2 -j ROUTE --gw [RaspberryPI-IP-address] --tee 
+
+#VLAN2 is your WAN interface
+
+#flush mangle entry
+#==================
+#This clears your rule if you want to return to defaults
+
+#iptables -F -t mangle
