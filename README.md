@@ -12,7 +12,7 @@ What OS does it run on?
 Raspbian - Jessie
 Can this be ported to other OSes?
 =================================
-Yup.  Try it out in A VM running the latest Debian or Ubuntu.  It should cooperate.  If not give me some issue requests to mess around with.
+Yup.  Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate.  If not give me some issue requests to mess around with.
 What Router(s) have you tested this with?
 =========================================
 Just the Linksys E1200v2 thus far
