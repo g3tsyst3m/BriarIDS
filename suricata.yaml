@@ -1,0 +1,15 @@
+##################################################
+# Add the changes below to your suricata.yaml file
+##################################################
+
+# Holds variables that would be used by the engine.
+vars:
+
+  # Holds the address group vars that would be passed in a Signature.
+  # These would be retrieved during the Signature address parsing stage.
+  address-groups:
+
+    HOME_NET: "[YOUR_WAN_IP_GOES_HERE/32]"
+
+    EXTERNAL_NET: "any"
+
