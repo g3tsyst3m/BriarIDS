@@ -9,7 +9,7 @@ It's not really.  The key difference is how it's setup.  This is a home IDS solu
 I wanted to provide the most cost effective and feasible solution for homeowners to protect their network.  A PI will run you roughly $40-$60 with a decent SDcard purchased along with it. Next, as we all know, you need a tap interface or some way to get packets into your monitoring interface.  Well, I couldn't afford the switch I truly wanted to achieve this.  While there are other somewhat reasonably priced solutions out there, I decided to take advantage of what I already had to work with at the house.  That's where Tomato Router firmware comes in.  The rest is history.  After a weekend of researching IPTable entries and Raspberry PI customizations, the solution was ready to test in Beta form.  
 What OS does it run on?
 =======================
-Raspian - Jessie
+Raspbian - Jessie
 Can this be ported to other OSes?
 =================================
 Yup.  Try it out in A VM running the latest Debian or Ubuntu.  It should cooperate.  If not give me some issue requests to mess around with.
