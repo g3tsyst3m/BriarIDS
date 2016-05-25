@@ -1,6 +1,22 @@
 #!/bin/bash
 touch install_log.log
 rm install_log.log
+
+ls /opt/suricata/etc/suricata/BriarIDS_installed
+if [ $? == 0 ] ; then
+   clear
+   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+   echo "It looks like you've already installed BriarIDS."
+   echo "Delete this file if you'd like to re-install: '/opt/suricata/etc/suricata/BriarIDS_installed' "
+   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+   sleep 10
+   exit
+   else
+   clear
+   echo "Doesn't look like you have installed BriarIDS.  Continuing with installation..."
+   fi
+
+
 echo "#######################################################"
 echo "# BriarIDS install script for Raspian OS (raspberry pi)"
 echo "# This is revision 0.1 and a VERY early Beta solution"
@@ -160,7 +176,8 @@ if [ $? != 0 ] ; then
    echo "so far so good ;)"
    fi
 
-echo "You made it!  Installation was a success.  Now it's time to run it!!!"
+touch /opt/suricata/etc/suricata/BriarIDS_installed
+echo "You made it!  Installation was a success.  Now it's time to give it a test run."
 echo "what interface do you want to monitor? examples: eth0/eth1/wlan0,etc"
 read yourinterface
 ethtool -K $yourinterface tx off rx off sg off gso off gro off
