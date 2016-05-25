@@ -1,5 +1,5 @@
 # BriarIDS
-A simple yet effective IDS for the Raspberry PI.  Right now it's simply a shell script but there will be enhancements added very soon to make this more automated and expanded in its capabilities.
+A simple yet effective IDS for the Raspberry PI.  Right now it's simply a shell script, however, I intend on wrapping this into either a python or perl GUI frontend soon for an all-in-one solution.
 Why the name BriarIDS?
 =======================
 It's kinda cheesy.  The name comes from the protection Briars and Brambles (Raspberry bushes) give to rabbits when under attack.  
