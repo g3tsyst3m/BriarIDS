@@ -1,5 +1,5 @@
 # BriarIDS
-A simple yet effective IDS for the Raspberry PI.  Right now it's simply a shell script, however, I intend on wrapping this into either a python or perl GUI frontend soon for an all-in-one solution.
+A simple yet effective IDS for the Raspberry PI.  Right now it's simply a shell script that installs Suricata, configured to work with Raspbian.  However, I intend on wrapping this into a PyQT frontend soon for an all-in-one solution that installs and monitors your network.
 Why the name BriarIDS?
 =======================
 It's kinda cheesy.  The name comes from the protection Briars and Brambles (Raspberry bushes) give to rabbits when under attack.  
