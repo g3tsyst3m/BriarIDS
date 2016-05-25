@@ -22,3 +22,6 @@ Just the Linksys E1200v2 thus far
 What Tomato firmware version are you using?
 ======================================
 tomato-E1200v2-NVRAM64K-1.28.RT-N5x-MIPSR2-132-Max.bin
+I have more questions...
+========================
+I hoped you would.  Check out the wiki and let me know what needs to be added.
