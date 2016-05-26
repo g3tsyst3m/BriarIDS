@@ -1,5 +1,19 @@
 #!/bin/bash
 
+ls /opt/suricata/etc/suricata/suricata.yaml
+if [ $? != 0 ] ; then
+   clear
+   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+   echo "You need to install BriarIDS first before you check its config..."
+   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+   sleep 10
+   exit
+   else
+   clear
+   echo "Loading..."
+   sleep 5
+   fi
+
 grep -F '[192.168.0.0/16,10.0.0.0/8,172.16.0.0/12]' /opt/suricata/etc/suricata/suricata.yaml
 if [ $? == 0 ] ; then
    clear
