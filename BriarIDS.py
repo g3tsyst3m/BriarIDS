@@ -5,7 +5,7 @@ from PyQt4 import QtCore, QtGui
 import loadBriarMenu
 ########################################
 
-class Main(QtGui.QMainWindow):
+class Main(QtGui.QWidget):
     def __init__(self):
         super(Main, self).__init__()
         print "loading main menu..."        
