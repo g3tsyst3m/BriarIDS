@@ -1,6 +1,5 @@
 # BriarIDS
 A simple yet effective IDS for the Raspberry PI.  BriarIDS is configured to work with Raspbian and takes advantage of the PyQT GUI frontend for an all-in-one solution that installs and monitors your network.
-<img src="https://github.com/musicmancorley/BriarIDS/blob/master/Hare.png">
 Why the name BriarIDS?
 =======================
 It's kinda cheesy.  The name comes from the protection Briars and Brambles (Raspberry bushes) give to rabbits when under attack.  
