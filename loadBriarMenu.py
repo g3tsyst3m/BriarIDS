@@ -20,8 +20,8 @@ except AttributeError:
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(464, 478)
-        Form.setMinimumSize(QtCore.QSize(436, 400))
+        Form.resize(480, 478)
+        Form.setMinimumSize(QtCore.QSize(350, 400))
         self.gridLayout = QtGui.QGridLayout(Form)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.label_2 = QtGui.QLabel(Form)
