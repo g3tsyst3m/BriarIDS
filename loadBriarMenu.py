@@ -120,9 +120,7 @@ class Ui_Form(object):
         os.system("x-terminal-emulator -e './briarids-install-script.sh'")
     def runtheprog(self):
         print ("starting Suricata!")
-        os.system("ethtool -K eth0 tx off rx off sg off gso off gro off")
-        os.system("x-terminal-emulator -e '/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet=eth0' &")
-        os.system("x-terminal-emulator -e 'tail -f /var/log/suricata/http.log /var/log/suricata/fast.log'")
+        os.system("x-terminal-emulator -e './setmonandrun.sh'")
     def configcheck(self):
         os.system("x-terminal-emulator -e './configcheck.sh'")
     def updatecheck(self):
