@@ -119,7 +119,7 @@ class Ui_Form(object):
         self.pushButton.setToolTip(_translate("Form", "This installs BriarIDS and also checks if it is already installed", None))
         self.pushButton.setText(_translate("Form", "Install", None))
         self.pushButton.clicked.connect(self.install)
-        self.label_2.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:15pt; color:#0055ff;\">Welcome to BriarIDS -  designed for the Raspberry Pi</span></p></body></html>", None))
+        self.label_2.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:12pt; color:#0055ff;\">Welcome to BriarIDS -  designed for the Raspberry Pi</span></p></body></html>", None))
         self.pushButton_2.setToolTip(_translate("Form", "This starts the IDS engine and displays log alerts in the terminal", None))
         self.pushButton_2.setText(_translate("Form", "Run", None))
         self.pushButton_2.clicked.connect(self.runtheprog)
