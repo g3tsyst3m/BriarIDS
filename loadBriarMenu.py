@@ -150,7 +150,7 @@ class Ui_Form(object):
         mycommand='/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet='+monint
         os.system("x-terminal-emulator -e "+mycommand)
     def configcheck(self):
-        os.system("x-terminal-emulator -e './configcheck.sh'")
+        os.system("./configcheck.sh")
     def updatecheck(self):
-        os.system("x-terminal-emulator -e './updatecheck.sh'")        
+        os.system("./updatecheck.sh")        
 import main_rc
