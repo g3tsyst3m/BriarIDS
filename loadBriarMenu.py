@@ -21,7 +21,10 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
         Form.resize(436, 517)
+        
         Form.setMinimumSize(QtCore.QSize(436, 400))
+        Form.setMaximumSize(QtCore.QSize(454, 503))
+
         self.gridLayout = QtGui.QGridLayout(Form)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.line_2 = QtGui.QFrame(Form)

@@ -3,6 +3,8 @@
 #Installing prereqs
 cd ~
 echo "Installing prereqs"
+sudo apt-get update
+sudo apt-get install cmake make gcc g++ flex bison libpcap-dev libgeoip-dev libssl-dev python-dev zlib1g-dev libmagic-dev swig2.0 -y
 sudo apt-get install python-pip -y
 sudo pip install setuptools
 git clone git://git.bro-ids.org/pysubnettree.git
