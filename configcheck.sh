@@ -6,7 +6,7 @@ if [ $? != 0 ] ; then
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    zenity --info --text="You need to install BriarIDS first before you check its config..."
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   sleep 10
+   sleep 4
    exit
    else
    clear
@@ -25,10 +25,19 @@ if [ $? == 0 ] ; then
    sed -i "/172.16.0.0\/12/c\    HOME_NET: \"[$YOUR_WAN_IP\/32,10.0.0.0\/8,192.168.0.0\/16,172.16.0.0\/12]\"" /opt/suricata/etc/suricata/suricata.yaml
    sed -i "/EXTERNAL_NET/c\    EXTERNAL_NET: \"any\"" /opt/suricata/etc/suricata/suricata.yaml
    zenity --info --text="ok configuration should be optimized now"
-   sleep 10
+   sleep 4
    exit
    else
    clear
-   zenity --info --text="Your config looks good ;)"
-   sleep 10
+   zenity --info --text="Main config looks good ;)"
+   sleep 3
    fi
+
+grep -F '# - emerging-chat.rules' /opt/suricata/etc/suricata/suricata.yaml
+if [ $? != 0 ] ; then
+   clear
+   echo "Commenting out AIM_SERVERS rule..."
+   sed -i "/ - emerging-chat.rules/c\# - emerging-chat.rules" /opt/suricata/etc/suricata/suricata.yaml
+   zenity --info --text="Ok.  AIM_SERVERS rule has been corrected!"
+   fi
+   exit
