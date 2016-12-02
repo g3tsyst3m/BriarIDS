@@ -35,7 +35,7 @@ cd ~
 #Install Critical Stack
 clear
 echo "Installing Critical Stack Agent"
-sudo wget https://intel.criticalstack.com/client/critical-stack-intel-arm.deb
+sudo wget https://intel.criticalstack.com/client/critical-stack-intel-arm.deb --no-check-certificate
 sudo dpkg -i critical-stack-intel-arm.deb
 sudo -u critical-stack critical-stack-intel api $apikey
 sudo rm critical-stack-intel-arm.deb
