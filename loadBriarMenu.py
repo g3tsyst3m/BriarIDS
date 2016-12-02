@@ -21,7 +21,6 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
         Form.resize(436, 517)
-        
         Form.setMinimumSize(QtCore.QSize(436, 400))
         Form.setMaximumSize(QtCore.QSize(454, 503))
 
@@ -132,7 +131,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(_translate("Form", "BriarIDS", None))
         self.pushButton.setToolTip(_translate("Form", "This installs Suricata and also checks if Suricata is already installed", None))
-        self.pushButton.setText(_translate("Form", "Install", None))
+        self.pushButton.setText(_translate("Form", "Install Suricata", None))
         self.pushButton.clicked.connect(self.install)
         self.label_2.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#0055ff;\">Welcome to BriarIDS -  designed for the Raspberry Pi</span></p></body></html>", None))
         self.pushButton_2.setToolTip(_translate("Form", "This starts the Suricata IDS engine and displays log alerts in the terminal", None))

@@ -14,6 +14,7 @@ if [ $? == 0 ] ; then
    else
    clear
    echo "Doesn't look like you have installed BriarIDS.  Continuing with installation..."
+   zenity --info --text="There is an install log file that gets created and added to that can be viewed by issuing the following command: tail -f /usr/local/src/install_log.log.  If you wish to follow the installation progress or be aware of installation issues, refer to this log at any point during installation."
    fi
 
 
