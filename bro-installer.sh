@@ -34,7 +34,7 @@ read apikey
 cd ~
 #Install Critical Stack
 clear
-echo "Installing Critical Stack Agent"
+echo "Installing Critical Stack Agent for Raspberry pi .arm client"
 sudo wget https://intel.criticalstack.com/client/critical-stack-intel-arm.deb --no-check-certificate
 sudo dpkg -i critical-stack-intel-arm.deb
 sudo -u critical-stack critical-stack-intel api $apikey
