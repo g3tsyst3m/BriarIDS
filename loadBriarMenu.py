@@ -143,7 +143,7 @@ class Ui_Form(object):
         self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
         self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
         self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
-        self.pushButton_5.setText(_translate("Form", "(NEW) Install Bro and Intel Feed Agent", None))
+        self.pushButton_5.setText(_translate("Form", "Install Bro-2.5 and Intel Feed Agent", None))
         self.pushButton_5.clicked.connect(self.brointelinstall)
         self.pushButton_4.clicked.connect(self.configcheck)
         self.comboBox.setItemText(0, _translate("Form", "eth0", None))
