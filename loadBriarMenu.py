@@ -138,10 +138,10 @@ class Ui_Form(object):
         self.pushButton_2.setText(_translate("Form", "Run Suricata", None))
         self.pushButton_2.clicked.connect(self.runtheprog)
         self.pushButton_3.setToolTip(_translate("Form", "This checks for most recent updates...", None))
-        self.pushButton_3.setText(_translate("Form", "Check for Updates", None))
+        self.pushButton_3.setText(_translate("Form", "Check for Updates from GitHub", None))
         self.pushButton_3.clicked.connect(self.updatecheck)
-        self.pushButton_4.setToolTip(_translate("Form", "This compares your active configuration with the recommended configuration", None))
-        self.pushButton_4.setText(_translate("Form", "Check Suricata Configuration", None))
+        self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
+        self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
         self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
         self.pushButton_5.setText(_translate("Form", "(NEW) Install Bro and Intel Feed Agent", None))
         self.pushButton_5.clicked.connect(self.brointelinstall)
@@ -164,6 +164,7 @@ class Ui_Form(object):
         print ("Note: You can view your alert logs by issuing the following command: tail -f /var/log/suricata/http.log /var/log/suricata/fast.log")
         os.system("sleep 5")
         print "Starting Suricata!!!"
+        os.system("./rulecleanup.sh")
         mycommand='/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet='+monint
         os.system("x-terminal-emulator -e "+mycommand)
     def configcheck(self):
