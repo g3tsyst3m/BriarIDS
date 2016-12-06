@@ -4,7 +4,7 @@
 cd ~
 echo "Installing prereqs"
 sudo apt-get update
-sudo apt-get install cmake make gcc g++ flex bison libpcap-dev libgeoip-dev libssl-dev python-dev zlib1g-dev libmagic-dev swig2.0 -y
+sudo apt-get install cmake make gcc g++ flex bison libpcap-dev libgeoip-dev libssl-dev python-dev zlib1g-dev libmagic-dev swig -y
 sudo apt-get install python-pip -y
 sudo pip install setuptools
 git clone git://git.bro-ids.org/pysubnettree.git
@@ -13,18 +13,21 @@ sudo python setup.py install
 cd ~
 #Install Bro
 clear
-echo "Installing Bro...go do something entertaining for about 2 hours and when you get back this should be about done ;)"
-sudo wget https://www.bro.org/downloads/release/bro-2.4.1.tar.gz
-sudo tar -xzf bro-2.4.1.tar.gz
+echo "Installing Bro...depending on your PI (zero, pi2, pi 3) this could take anywhere from 2 - 5 hours to complete, so go grab a coffee and when you get back this should be about done ;)"
+#sudo wget https://www.bro.org/downloads/release/bro-2.4.1.tar.gz
+sudo wget https://www.bro.org/downloads/bro-2.5.tar.gz
+sudo tar -xzf bro-2.5.tar.gz
 sudo mkdir /opt/nsm
 sudo mkdir /opt/nsm/bro
-cd bro-2.4.1
+cd bro-2.5
+echo "issuing 'configure' command."
 sudo ./configure --prefix=/opt/nsm/bro
+echo "issuing 'make' command."
 sudo make
 sudo make install
 cd ..
-sudo rm bro-2.4.1.tar.gz
-sudo rm -rf bro-2.4.1/
+sudo rm bro-2.5.tar.gz
+sudo rm -rf bro-2.5/
 clear
 echo "Bro Install complete.  Now let's setup the Intel feed from CriticalStack."
 echo "Browse to this URL and sign up for a free account so you can use their security intel feeds with Bro: https://intel.criticalstack.com/user/sign_up"

@@ -85,7 +85,7 @@ if [ $? != 0 ] ; then
    clear
    echo "so far so good ;)"
    fi
-echo "issuing MAKE command"
+echo "issuing MAKE command.  This could take a bit to complete so please be patient..."
 make >> /usr/local/src/install_log.log
 if [ $? != 0 ] ; then
    clear
@@ -150,7 +150,7 @@ if [ $? != 0 ] ; then
    clear
    echo "so far so good ;)"
    fi
-echo "issuing the MAKE command..."
+echo "issuing the MAKE command...this could take a bit to complete so please be patient..."
 make >> /usr/local/src/install_log.log
 if [ $? != 0 ] ; then
    clear
