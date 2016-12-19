@@ -28,6 +28,8 @@ sudo make install
 cd ..
 sudo rm bro-2.5.tar.gz
 sudo rm -rf bro-2.5/
+echo "hit enter to continue...please review console output above to check for any errors during make and make install"
+read
 clear
 echo "Bro Install complete.  Now let's setup the Intel feed from CriticalStack."
 echo "Browse to this URL and sign up for a free account so you can use their security intel feeds with Bro: https://intel.criticalstack.com/user/sign_up"
