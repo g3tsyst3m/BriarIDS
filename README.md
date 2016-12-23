@@ -1,6 +1,6 @@
 # BriarIDS
 
-<b>Be sure to check out the <a href="https://github.com/musicmancorley/BriarIDS/wiki">WIKI</a> for detailed instructions and further information!  I've updated it with plenty of useful information</b>
+<b>Be sure to check out the <a href="https://github.com/musicmancorley/BriarIDS/wiki">WIKI</a> for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information</b>
 
 Feeling generous?  Why not shoot me a $1 and I'll add it to the Briar fund.  I'd like to test out some additional hardware TAP devices down the road and other complimentary hardware solutions.  This would allow for more extensive logging and with your help we can make this goal a reality! https://www.paypal.me/BriarIDS/1
 
