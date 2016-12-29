@@ -62,3 +62,23 @@ else
 echo -e "\033[0;34m no .zip files discovered..."
 fi
 
+echo -e "\033[0;33m"
+echo "Scanning for .rar files..."
+scanner=$( file --mime /var/log/suricata/files/* | grep application/x-rar )
+if [[ $scanner == *"x-rar"* ]]; then
+echo -e "\033[32m discovered .rar file(s)! "
+rar_catcher=$( echo $scanner | egrep -o 'file.[[:digit:]]{1,3}' )
+echo -e "\033[1;33m"
+for listy4 in $rar_catcher; do
+echo "File location and name:" /var/log/suricata/files/$listy4
+echo file details below:
+echo "=================="
+echo ""
+cat /var/log/suricata/files/$listy4.meta;
+echo ""
+#python $vtotlocation /var/log/suricata/files/$listy4
+done
+else
+echo -e "\033[0;34m no .rar files discovered..."
+fi
+
