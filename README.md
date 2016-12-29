@@ -1,7 +1,13 @@
 # BriarIDS
 
-<b>Be sure to check out the WIKI for detailed instructions and further information!  I've updated it with plenty of useful information</b>
+<b>Be sure to check out the <a href="https://github.com/musicmancorley/BriarIDS/wiki">WIKI</a> for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information</b>
 
+Feeling generous?  Why not shoot me a $1 and I'll add it to the Briar fund.  I'd like to test out some additional hardware TAP devices down the road and other complimentary hardware solutions.  This would allow for more extensive logging and with your help we can make this goal a reality! https://www.paypal.me/BriarIDS/1
+
+If BriarIDS is used for educational purposes in the classroom setting (ie. Network Security courses, etc) please send me some feedack if you dont' mind, letting me know how it cooperated.  Thanks!
+
+Introduction
+============
 A simple yet effective IDS for the Raspberry PI.  BriarIDS is configured to work with Raspbian and takes advantage of the PyQT GUI frontend for an all-in-one solution that monitors your home network.  Bro is now integrated into the BriarIDS GUI for additional logging options.  Snorby is still a work in progress concerning an automated installation.  Will post progress notes on wordpress site periodically.  
 <img src="https://github.com/musicmancorley/BriarIDS/blob/master/briarimage.png">
 Why the name BriarIDS?
@@ -15,10 +21,10 @@ Why the Raspberry Pi?
 Since I wanted to provide the most cost effective and feasible solution for homeowners to protect their network, I knew a Raspberry PI would fit the bill assuming it cooperated.  A PI will run you roughly $40-$60 with a decent SDcard purchased along with it. Next, as we all know, you need a tap interface or some way to get packets into your monitoring interface.  While there are other somewhat reasonably priced solutions out there, I decided to take advantage of what I already had to work with at the house.  That's where Tomato Router firmware comes in.  The IPTables --tee functionality did the job and copied all my WAN packets over to the Raspberry Device with ease.  Once things began cooperating I wanted to share this solution with everyone.  I know I can't be the only one out there who desires to have an easy and affordable solution for their home network security perimeter.
 What OS does it run on?
 =======================
-Raspbian - Jessie
+Raspbian
 Can this be ported to other OSes?
 =================================
-Yup.  Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate.  If not give me some issue requests to mess around with.
+Yup.  Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate with the exception of the critical-stack agent.  You will want to download the intel x86/x64 .deb file versus the .arm currently set to download in the script.
 What Router(s) have you tested this with?
 =========================================
 Just the Linksys E1200v2 thus far
