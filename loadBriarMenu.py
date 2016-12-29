@@ -137,7 +137,7 @@ class Ui_Form(object):
         self.pushButton_8.setDefault(False)
         self.pushButton_8.setFlat(False)
         self.pushButton_8.setObjectName(_fromUtf8("pushButton_8"))
-        self.gridLayout.addWidget(self.pushButton_8, 9, 0, 1, 2)
+        self.gridLayout.addWidget(self.pushButton_8, 12, 0, 1, 2)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
