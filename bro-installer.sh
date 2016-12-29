@@ -42,6 +42,7 @@ cd ..
 sudo rm bro-2.5.tar.gz
 sudo rm -rf bro-2.5/
 echo "Bro Install complete. Hit enter to continue or review your console output for any errors above this text."
+echo "hit enter to continue...please review console output above to check for any errors during make and make install"
 read
 clear
 echo "let's setup the Intel feed from CriticalStack."
