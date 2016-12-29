@@ -125,6 +125,19 @@ class Ui_Form(object):
         self.pushButton_3.setFlat(False)
         self.pushButton_3.setObjectName(_fromUtf8("pushButton_3"))
         self.gridLayout.addWidget(self.pushButton_3, 9, 0, 1, 2)
+        
+        self.pushButton_8 = QtGui.QPushButton(Form)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_8.setFont(font)
+        self.pushButton_8.setAutoFillBackground(True)
+        self.pushButton_8.setAutoDefault(False)
+        self.pushButton_8.setDefault(False)
+        self.pushButton_8.setFlat(False)
+        self.pushButton_8.setObjectName(_fromUtf8("pushButton_8"))
+        self.gridLayout.addWidget(self.pushButton_8, 9, 0, 1, 2)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -146,6 +159,9 @@ class Ui_Form(object):
         self.pushButton_5.setText(_translate("Form", "Install Bro-2.5 and Intel Feed Agent", None))
         self.pushButton_5.clicked.connect(self.brointelinstall)
         self.pushButton_4.clicked.connect(self.configcheck)
+        self.pushButton_8.setToolTip(_translate("Form", "Runs the VirusTotal Scanner against your extracted files!", None))
+        self.pushButton_8.setText(_translate("Form", "Virus Total File Scanner (new!)", None))
+        self.pushButton_8.clicked.connect(self.Vtotalscanner)
         self.comboBox.setItemText(0, _translate("Form", "eth0", None))
         self.comboBox.setItemText(1, _translate("Form", "eth1", None))
         self.comboBox.setItemText(2, _translate("Form", "eth2", None))
@@ -165,12 +181,14 @@ class Ui_Form(object):
         os.system("sleep 5")
         print "Starting Suricata!!!"
         os.system("./rulecleanup.sh")
-        mycommand='/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet='+monint
+        mycommand='/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet='+monint+" &"
         os.system("x-terminal-emulator -e "+mycommand)
     def configcheck(self):
         os.system("./configcheck.sh")
     def brointelinstall(self):
         os.system("./bro-installer.sh")
     def updatecheck(self):
-        os.system("./updatecheck.sh")        
+        os.system("./updatecheck.sh")       
+    def Vtotalscanner(self):
+        os.system("./filetypescan.sh") 
 import main_rc

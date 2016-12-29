@@ -6,6 +6,8 @@ except ImportError:
     print 'pyqt not installed...installing now.'
     os.system("sudo apt-get install python-qt4 -y")
     raise ImportError("ok done installing try running Briar now!")
+
+os.system("sudo ./checkXauth.sh")
 ########################################
 #include name of gui python script below
 import loadBriarMenu
