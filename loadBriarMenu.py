@@ -20,9 +20,10 @@ except AttributeError:
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(436, 517)
-        Form.setMinimumSize(QtCore.QSize(436, 400))
-        Form.setMaximumSize(QtCore.QSize(454, 503))
+        #Form.resize(436, 517)
+        Form.setFixedSize(QtCore.QSize(454, 503))
+        #Form.setMinimumSize(QtCore.QSize(436, 400))
+        #Form.setMaximumSize(QtCore.QSize(454, 503))
 
         self.gridLayout = QtGui.QGridLayout(Form)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
@@ -113,18 +114,18 @@ class Ui_Form(object):
         self.pushButton_5.setFlat(False)
         self.pushButton_5.setObjectName(_fromUtf8("pushButton_5"))
         self.gridLayout.addWidget(self.pushButton_5, 6, 0, 1, 2)
-        self.pushButton_3 = QtGui.QPushButton(Form)
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setAutoFillBackground(True)
-        self.pushButton_3.setAutoDefault(False)
-        self.pushButton_3.setDefault(False)
-        self.pushButton_3.setFlat(False)
-        self.pushButton_3.setObjectName(_fromUtf8("pushButton_3"))
-        self.gridLayout.addWidget(self.pushButton_3, 9, 0, 1, 2)
+        #self.pushButton_3 = QtGui.QPushButton(Form)
+        #font = QtGui.QFont()
+        #font.setPointSize(12)
+        #font.setBold(True)
+        #font.setWeight(75)
+        #self.pushButton_3.setFont(font)
+        #self.pushButton_3.setAutoFillBackground(True)
+        #self.pushButton_3.setAutoDefault(False)
+        #self.pushButton_3.setDefault(False)
+        #self.pushButton_3.setFlat(False)
+        #self.pushButton_3.setObjectName(_fromUtf8("pushButton_3"))
+        #self.gridLayout.addWidget(self.pushButton_3, 9, 0, 1, 2)
         
         self.pushButton_8 = QtGui.QPushButton(Form)
         font = QtGui.QFont()
@@ -150,9 +151,9 @@ class Ui_Form(object):
         self.pushButton_2.setToolTip(_translate("Form", "This starts the Suricata IDS engine and displays log alerts in the terminal", None))
         self.pushButton_2.setText(_translate("Form", "Run Suricata", None))
         self.pushButton_2.clicked.connect(self.runtheprog)
-        self.pushButton_3.setToolTip(_translate("Form", "This checks for most recent updates...", None))
-        self.pushButton_3.setText(_translate("Form", "Check for Updates from GitHub", None))
-        self.pushButton_3.clicked.connect(self.updatecheck)
+        #self.pushButton_3.setToolTip(_translate("Form", "This checks for most recent updates...", None))
+        #self.pushButton_3.setText(_translate("Form", "Check for Updates from GitHub", None))
+        #self.pushButton_3.clicked.connect(self.updatecheck)
         self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
         self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
         self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
@@ -176,7 +177,7 @@ class Ui_Form(object):
     def runtheprog(self):
         monint=str(self.comboBox.currentText())
         print ("Configuring interface using Ethtool...")
-        os.system("ethtool -K "+monint+" tx off rx off sg off gso off gro off")
+        os.system("ethtool -K "+monint+" tx off rx off sg off gso off gro off" + " 2>/dev/null")
         print ("Note: You can view your alert logs by issuing the following command: tail -f /var/log/suricata/http.log /var/log/suricata/fast.log")
         os.system("sleep 5")
         print "Starting Suricata!!!"
@@ -187,8 +188,7 @@ class Ui_Form(object):
         os.system("./configcheck.sh")
     def brointelinstall(self):
         os.system("./bro-installer.sh")
-    def updatecheck(self):
-        os.system("./updatecheck.sh")       
     def Vtotalscanner(self):
         os.system("./filetypescan.sh") 
 import main_rc
+

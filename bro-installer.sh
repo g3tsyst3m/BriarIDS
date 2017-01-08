@@ -8,7 +8,7 @@ cd ~
 echo "Installing prereqs"
 echo "Installing prereqs" >> /usr/local/src/broinstall.log
 sudo apt-get update
-sudo apt-get install cmake make gcc g++ flex bison libpcap-dev libgeoip-dev libssl-dev python-dev zlib1g-dev libmagic-dev swig -y
+sudo apt-get install cmake make gcc g++ flex bison libpcap-dev locate libgeoip-dev libssl-dev python-dev zlib1g-dev libmagic-dev swig -y
 sudo apt-get install python-pip -y
 echo "Installing setuptools via pip..." >> /usr/local/src/broinstall.log
 sudo pip install setuptools

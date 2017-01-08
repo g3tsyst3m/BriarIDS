@@ -21,9 +21,6 @@ if [ $? != 0 ] ; then
    fi
 
 
-
-
-
 zenity --info --text="Current available options: .exe, .php, and .zip/.rar files. NOTE: .php will scan every php file collected from all websites browsed so use at your own risk" &> /dev/null
 selection=$( zenity --forms --title "Select files to scan" --text "Filetype Selection" --add-combo "Choose a filetype to scan below" --combo-values ".exe|.php|.zip|.rar|ALL" 2> /dev/null )
 vtotlocation=$( locate Vtotalcheck.py )

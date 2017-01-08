@@ -8,6 +8,7 @@ except ImportError:
     raise ImportError("ok done installing try running Briar now!")
 
 os.system("sudo ./checkXauth.sh")
+os.system("sudo ./updatecheck.sh")
 ########################################
 #include name of gui python script below
 import loadBriarMenu

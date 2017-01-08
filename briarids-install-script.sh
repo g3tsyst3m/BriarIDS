@@ -29,7 +29,7 @@ echo "--------------------------------"
 sleep 3
 echo "Gettin' the dependencies..."
 apt-get update
-apt-get -y install build-essential lxterminal cmake autoconf automake libtool libpcap-dev libnet1-dev \
+apt-get -y install build-essential locate lxterminal cmake autoconf automake libtool libpcap-dev libnet1-dev \
 libyaml-0-2 libyaml-dev zlib1g zlib1g-dev libcap-ng-dev libcap-ng0 \
 make flex bison git git-core subversion libmagic-dev \
 libgeoip1 libgeoip-dev libjansson4 libjansson-dev python-simplejson libnss3-dev libnspr4-dev \
