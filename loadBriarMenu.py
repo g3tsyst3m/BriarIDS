@@ -157,7 +157,7 @@ class Ui_Form(object):
         self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
         self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
         self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
-        self.pushButton_5.setText(_translate("Form", "Install Bro-2.5 and Intel Feed Agent", None))
+        self.pushButton_5.setText(_translate("Form", "Install/Configure/Run Bro AND Intel Agent!", None))
         self.pushButton_5.clicked.connect(self.brointelinstall)
         self.pushButton_4.clicked.connect(self.configcheck)
         self.pushButton_8.setToolTip(_translate("Form", "Runs the VirusTotal Scanner against your extracted files!", None))
@@ -170,7 +170,7 @@ class Ui_Form(object):
         self.comboBox.setItemText(4, _translate("Form", "eth4", None))
         self.comboBox.setItemText(5, _translate("Form", "wlan0", None))
         self.comboBox.setItemText(6, _translate("Form", "wlan1", None))
-        self.label_3.setText(_translate("Form", "<span style='font-size:8pt'>SELECT YOUR MONITOR INTERFACE:</span>", None))
+        self.label_3.setText(_translate("Form", "<span style='font-size:8pt'>CHOOSE SURICATA MONITOR INTERFACE:</span>", None))
     def install(self):
         print ("Installation routine initializing...")
         os.system("x-terminal-emulator -e './suricata-install-script.sh'")
@@ -187,7 +187,7 @@ class Ui_Form(object):
     def configcheck(self):
         os.system("./configcheck.sh")
     def brointelinstall(self):
-        os.system("./bro-installer.sh")
+        os.system("./bromenu.sh")
     def Vtotalscanner(self):
         os.system("./filetypescan.sh") 
 import main_rc
