@@ -173,7 +173,7 @@ class Ui_Form(object):
         self.label_3.setText(_translate("Form", "<span style='font-size:8pt'>SELECT YOUR MONITOR INTERFACE:</span>", None))
     def install(self):
         print ("Installation routine initializing...")
-        os.system("x-terminal-emulator -e './briarids-install-script.sh'")
+        os.system("x-terminal-emulator -e './suricata-install-script.sh'")
     def runtheprog(self):
         monint=str(self.comboBox.currentText())
         print ("Configuring interface using Ethtool...")
