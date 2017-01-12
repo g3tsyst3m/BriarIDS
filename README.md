@@ -9,7 +9,7 @@ If BriarIDS is used for educational purposes in the classroom setting (ie. Netwo
 Introduction
 ============
 A simple yet effective IDS for the Raspberry PI.  BriarIDS is configured to work with Raspbian and takes advantage of the PyQT GUI frontend for an all-in-one solution that monitors your home network.  Bro is now integrated into the BriarIDS GUI for additional logging options.  Snorby is still a work in progress concerning an automated installation.  Will post progress notes on wordpress site periodically.  
-<img src="https://github.com/musicmancorley/BriarIDS/blob/master/newpic_update.png?raw=true">
+<img src="https://github.com/musicmancorley/BriarIDS/blob/master/images/newpic_update.png?raw=true">
 Why the name BriarIDS?
 =======================
 It's kinda cheesy.  The name comes from the protection Briars and Brambles (Raspberry bushes) give to rabbits when under attack.  
