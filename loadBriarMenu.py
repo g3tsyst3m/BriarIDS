@@ -179,6 +179,8 @@ class Ui_Form(object):
         print ("Configuring interface using Ethtool...")
         os.system("ethtool -K "+monint+" tx off rx off sg off gso off gro off" + " 2>/dev/null")
         print ("Note: You can view your alert logs by issuing the following command: tail -f /var/log/suricata/http.log /var/log/suricata/fast.log")
+        print ("Even better, you are encouraged to use the new WEB GUI log management interface, TheBriarPatch, specifically for BriarIDS!")
+        print ("Go here to clone it: https://github.com/musicmancorley/TheBriarPatch")
         os.system("sleep 5")
         print "Starting Suricata!!!"
         os.system("./rulecleanup.sh")
