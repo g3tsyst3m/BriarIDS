@@ -4,7 +4,8 @@
 
 Feeling generous?  Why not shoot me a $1 and I'll add it to the Briar fund.  I'd like to test out some additional hardware TAP devices down the road and other complimentary hardware solutions.  This would allow for more extensive logging and with your help we can make this goal a reality! https://www.paypal.me/BriarIDS/1
 
-If BriarIDS is used for educational purposes in the classroom setting (ie. Network Security courses, etc) please send me some feedack if you dont' mind, letting me know how it cooperated.  Thanks!
+If BriarIDS is used for educational purposes in the classroom setting (ie. Network Security courses, etc) please send me some feedack if you dont' mind, letting me know how it cooperated.  Thanks!<br>
+Here's my email: musicmancorley@gmail.com
 
 Introduction
 ============
@@ -24,7 +25,7 @@ What OS does it run on?
 Raspbian
 Can this be ported to other OSes?
 =================================
-Yup.  Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate with the exception of the critical-stack agent.  You will want to download the intel x86/x64 .deb file versus the .arm currently set to download in the script.
+Yes.  You may need to adjust some of the apt packages depending on the linux flavor you are using.  I've installed it successfully on Kali Linux (Debian 4.8.15-1kali1 (2016-12-23) x86_64 GNU/Linux). Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate with the exception of the critical-stack agent.  You will want to download the intel x86/x64 .deb file versus the .arm currently set to download in the script.
 What Router(s) have you tested this with?
 =========================================
 Just the Linksys E1200v2 thus far
