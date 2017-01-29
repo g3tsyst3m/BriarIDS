@@ -63,6 +63,7 @@ sleep 3
 fi
 
 if [[ $choice == "3" ]]; then
+sudo chown critical-stack:critical-stack /etc/sudoers.d
 sudo -u critical-stack critical-stack-intel config --set bro.include.path=/opt/nsm/bro/share/bro/site/local.bro
 sudo -u critical-stack critical-stack-intel config --set bro.broctl.path=/opt/nsm/bro/bin/broctl
 sudo -u critical-stack critical-stack-intel config --set bro.path=/opt/nsm/bro/bin/bro
@@ -70,6 +71,7 @@ sudo chmod -R 777 /opt/nsm/bro/share/bro/site/local.bro
 sudo chown critical-stack:critical-stack /etc/sudoers.d/99-critical-stack
 sudo -u critical-stack critical-stack-intel pull
 sudo chown root:root /etc/sudoers.d/99-critical-stack
+sudo chown root:root /etc/sudoers.d
 echo "Done!  Your intel critical stack configuration should be good to go now."
 sleep 3
 fi
