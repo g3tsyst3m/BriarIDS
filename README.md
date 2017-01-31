@@ -25,7 +25,7 @@ What OS does it run on?
 Raspbian
 Can this be ported to other OSes?
 =================================
-Yes.  You may need to adjust some of the apt packages depending on the linux flavor you are using.  I've installed it successfully on Kali Linux (Debian 4.8.15-1kali1 (2016-12-23) x86_64 GNU/Linux). Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate with the exception of the critical-stack agent.  You will want to download the intel x86/x64 .deb file versus the .arm currently set to download in the script.
+Yes.  You may need to adjust some of the apt packages depending on the linux flavor you are using.  I've installed it successfully on Kali Linux (Debian 4.8.15-1kali1 (2016-12-23) x86_64 GNU/Linux). Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate with the exception of the critical-stack agent and libssl.  You will want to download the intel x86/x64 .deb file versus the .arm deb file currently set to download in the script.  As for ssl, bro-2.5 only currently supports libssl1.0-dev so make sure you have that installed if installing on kali linux or other new repos.
 What Router(s) have you tested this with?
 =========================================
 Just the Linksys E1200v2 thus far
