@@ -2,7 +2,12 @@
 
 <b>Be sure to check out the <a href="https://github.com/musicmancorley/BriarIDS/wiki">WIKI</a> for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information.  Also, I've just recently rolled out a web Frontend for viewing logs captured by suricata.  Please do check it out and let me know what you think! https://github.com/musicmancorley/TheBriarPatch </b>
 
-Feeling generous?  Why not shoot me a $1 and I'll add it to the Briar fund.  I'd like to test out some additional hardware TAP devices down the road and other complimentary hardware solutions.  This would allow for more extensive logging and with your help we can make this goal a reality! https://www.paypal.me/BriarIDS/1
+Feeling generous?  Why not shoot me a $1, $5, or whatever your heart compels you to give, and I'll add it to the Briar fund.  I'd like to test out some additional hardware TAP devices down the road and other complimentary hardware solutions.  This would allow for more extensive logging and with your help we can make this goal a reality!<br>
+Donate $1: https://www.paypal.me/BriarIDS/1 <br>
+Donate $5  https://www.paypal.me/BriarIDS/5 <br>
+Customize your donation: https://www.paypal.me/BriarIDS/ <br>
+<br>
+Thank you all for the donations received in the last year.  I do truly appreciate your support!<br>
 
 If BriarIDS is used for educational purposes in the classroom setting (ie. Network Security courses, etc) please send me some feedack if you dont' mind, letting me know how it cooperated.  Thanks!<br>
 Here's my email: musicmancorley@gmail.com
