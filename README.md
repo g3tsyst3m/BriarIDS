@@ -25,9 +25,9 @@ It's not really.  The key difference is how it's setup.  This is a home network 
 Why the Raspberry Pi?
 ====================
 Since I wanted to provide the most cost effective and feasible solution for homeowners to protect their network, I knew a Raspberry PI would fit the bill assuming it cooperated.  A PI will run you roughly $40-$60 with a decent SDcard purchased along with it. Next, as we all know, you need a tap interface or some way to get packets into your monitoring interface.  While there are other somewhat reasonably priced solutions out there, I decided to take advantage of what I already had to work with at the house.  That's where Tomato Router firmware comes in.  The IPTables --tee functionality did the job and copied all my WAN packets over to the Raspberry Device with ease.  Once things began cooperating I wanted to share this solution with everyone.  I know I can't be the only one out there who desires to have an easy and affordable solution for their home network security perimeter.
-What OS does it run on?
+What PI OS(es) does it run on (that you have personally tested)?
 =======================
-Raspbian
+Raspbian, DietPI
 Can this be ported to other OSes?
 =================================
 Yes.  You may need to adjust some of the apt packages depending on the linux flavor you are using.  I've installed it successfully on Kali Linux (Debian 4.8.15-1kali1 (2016-12-23) x86_64 GNU/Linux). Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate with the exception of the critical-stack agent and libssl.  You will want to download the intel x86/x64 .deb file versus the .arm deb file currently set to download in the script.  As for ssl, bro-2.5 only currently supports libssl1.0-dev so make sure you have that installed if installing on kali linux or other new repos.
