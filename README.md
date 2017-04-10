@@ -1,6 +1,7 @@
 # BriarIDS
 
-*Be sure to check out the [**WIKI**](https://github.com/musicmancorley/BriarIDS/wiki) for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information.  Also, I've just recently rolled out [a web Frontend for viewing logs captured by suricata](https://github.com/musicmancorley/TheBriarPatch).  Please do [check it out](https://github.com/musicmancorley/TheBriarPatch) and let me know what you think!*
+Check out the new Donors page!  I huge thanks to all those who support BriarIDS: [**Donors**](https://github.com/musicmancorley/BriarIDS/wiki/Donors)<br>
+*Also be sure to check out the [**WIKI**](https://github.com/musicmancorley/BriarIDS/wiki) for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information.  Also, I've just recently rolled out [a web Frontend for viewing logs captured by suricata](https://github.com/musicmancorley/TheBriarPatch).  Please do [check it out](https://github.com/musicmancorley/TheBriarPatch) and let me know what you think!*
 
 Feeling generous?  Why not shoot me a $1, $5, or whatever your heart compels you to give, and I'll add it to the Briar fund.  I'd like to test out some additional hardware TAP devices down the road and other complimentary hardware solutions.  This would allow for more extensive logging and with your help we can make this goal a reality!
 
