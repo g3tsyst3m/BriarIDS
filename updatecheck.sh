@@ -1,4 +1,13 @@
 #!/bin/bash
+
+###############################
+#check for existence of zenity
+############################### 
+which zenity &> /dev/null
+if [ $? != 0 ] ; then
+sudo apt-get install zenity 
+fi
+
 echo "Checking for updates..."
 git remote show origin | grep "out of date"
 if [ $? == 0 ] ; then
@@ -13,3 +22,4 @@ if [ $? == 0 ] ; then
    echo "All good here.  No updates available at this time"
    sleep 1
    fi
+
