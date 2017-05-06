@@ -1,15 +1,15 @@
 #!/bin/bash
 
-#ls /home/pi/.Xauthority > /dev/null
+###########################
+# .Xauthority preparations
+###########################
 
-#if [ "$?" == "0" ]; then
-#sudo cp -f /home/pi/.Xauthority /root/
-#fi
+ls /etc/profile.d/xauth.sh &>/dev/null
 
-#check for the existence of .Xauthority
-
-ls -ahg /root/.Xauthority &>/dev/null
-#echo $?
 if [ "$?" == "2" ]; then
-sudo cp /home/pi/.Xauthority /root/
+cat <<EOF > /etc/profile.d/xauth.sh
+#!/sbin/bash
+export XAUTHORITY=~/.Xauthority
+EOF
 fi
+
