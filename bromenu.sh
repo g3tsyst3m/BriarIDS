@@ -31,8 +31,8 @@ echo "Please enter your desired monitoring interface below (eth0, wlan0, etc):"
 echo -n ":"
 read monint
 echo "Adding monitor interface to node.cfg"
-sudo sed -i '/interface=/,+1 d' /opt/nsm/bro/etc/node.cfg
-sudo sed -i '/type=standalone/a interface='$monint /opt/nsm/bro/etc/node.cfg
+sudo sed -i '12,$d' /opt/nsm/bro/etc/node.cfg #remove all other lines except what we need
+sudo sed -i "/interface=/c\interface=$monint" /opt/nsm/bro/etc/node.cfg
 echo "Ok monitor interface is set."
 echo "Checking WAN IP information..."
 grep Public /opt/nsm/bro/etc/networks.cfg
