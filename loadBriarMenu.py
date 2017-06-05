@@ -21,7 +21,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
         #Form.resize(436, 517)
-        Form.setFixedSize(QtCore.QSize(454, 503))
+        Form.setFixedSize(QtCore.QSize(454, 703))
         #Form.setMinimumSize(QtCore.QSize(436, 400))
         #Form.setMaximumSize(QtCore.QSize(454, 503))
 
