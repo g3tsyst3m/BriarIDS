@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-"""
+""" BriarIDS menu loader: Creates a python desktop application.
+
+Desktop application allows you to install Suricata, Bro, Critical Stack Agent 
+and Virus Total Scanner via selectable button options.  
+
+Follow wiki at https://github.com/musicmancorley/BriarIDS/wiki for latest docs.
 
 """
 
@@ -24,10 +29,22 @@ except AttributeError:
 
 class UiForm:
 
+    """Primary class that creates the BriarIDS desktop application
+    
+    Creates the desktop application, as well as runs bash script's depending on which button is 
+    pressed.
+    
+    """
+
     def setup_ui(self, Form):
-        """
+        """Sets up the outline of the UI.
         
+        Instantiates all the classes from the pyQt4 program and then defines the size,shape, layout of
+        all the UI elements.
+        
+        param Form: pyQt4 form object
         """
+
         Form.setObjectName(_fromUtf8("Form"))
         Form.setFixedSize(QtCore.QSize(454, 503))
 
@@ -133,13 +150,12 @@ class UiForm:
         self.pushButton_8.setObjectName(_fromUtf8("pushButton_8"))
         self.gridLayout.addWidget(self.pushButton_8, 12, 0, 1, 2)
 
-        self.retranslateUi(Form)
+        self.retranslate_ui(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
         
-    def retranslateUi(self, Form):
-        """
-        
-        """
+    def retranslate_ui(self, Form):
+        """Adds text to created UI elements"""
+
         Form.setWindowTitle(_translate("Form", "BriarIDS", None))
         self.pushButton.setToolTip(_translate("Form", "This installs Suricata and also checks if Suricata is already installed", None))
         self.pushButton.setText(_translate("Form", "Install Suricata", None))
@@ -167,42 +183,39 @@ class UiForm:
         self.label_3.setText(_translate("Form", "<span style='font-size:8pt'>CHOOSE SURICATA MONITOR INTERFACE:</span>", None))
     
     def install(self):
-        """
-        
-        """
+        """Runs the suricata install bash shell script when 'Install Suricata' button pressed"""
+
         print ("Installation routine initializing...")
         os.system("x-terminal-emulator -e './suricata-install-script.sh'")
         
     def runtheprog(self):
-        """
-        
-        """
+        """Start's suricata when 'Run Suricata' button pressed"""
+
         monint = str(self.comboBox.currentText())
         print ("Configuring interface using Ethtool...")
-        os.system("ethtool -K "+monint+" tx off rx off sg off gso off gro off" + " 2>/dev/null")
+        os.system("ethtool -K " + monint + " tx off rx off sg off gso off gro off" + " 2>/dev/null")
         print ("Note: You can view your alert logs by issuing the following command: tail -f /var/log/suricata/http.log /var/log/suricata/fast.log")
         print ("Even better, you are encouraged to use the new WEB GUI log management interface, TheBriarPatch, specifically for BriarIDS!")
         print ("Go here to clone it: https://github.com/musicmancorley/TheBriarPatch")
         os.system("sleep 5")
         print("Starting Suricata!!!")
         os.system("./rulecleanup.sh")
-        mycommand='/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet='+monint+" &"
+        mycommand = '/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet=' + monint + " &"
         os.system("x-terminal-emulator -e " + mycommand)
         
     def configcheck(self):
-        """
-        
-        """
+        """Python system call that runs script that makes sure BriarIDS is installed and that a WAN IP entered"""
+
         os.system("./configcheck.sh")
+
     def brointelinstall(self):
-        """
-        
-        """
+        """Python system call that runs script that installs/configures Bro."""
         os.system("./bromenu.sh")
+
     def vtotalscanner(self):
-        """
-        
-        """
-        os.system("./filetypescan.sh") 
+        """Python system call that runs script that runs vtotalscanner scripts"""
+
+        os.system("./filetypescan.sh")
+
 import main_rc
 
