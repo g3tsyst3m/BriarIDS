@@ -1,4 +1,6 @@
-"""
+"""BriarIDS main module
+
+Creates main class and makes sure it only runs on command line.
 
 """
 
@@ -14,12 +16,13 @@ except ImportError:
 os.system("sudo ./checkXauth.sh")
 os.system("sudo ./updatecheck.sh")
 
-# include name of gui python script below
 import load_briar_menu
 
 
 class Main(QtGui.QWidget):
+
     def __init__(self):
+
         super(Main, self).__init__()
         print "loading main menu..."        
           

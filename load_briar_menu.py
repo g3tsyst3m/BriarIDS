@@ -38,10 +38,17 @@ class UiForm:
 
     def setup_ui(self, Form):
         """Sets up the outline of the UI.
+<<<<<<< HEAD
         
         Instantiates all the classes from the pyQt4 program and then defines the size,shape, layout of
         all the UI elements.
         
+=======
+        
+        Instantiates all the classes from the pyQt4 program and then defines the size,shape, layout of
+        all the UI elements.
+        
+>>>>>>> PEP8/257 cleanup round #2, I think good enough for now
         param Form: pyQt4 form object
         """
 
@@ -152,7 +159,11 @@ class UiForm:
 
         self.retranslate_ui(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> PEP8/257 cleanup round #2, I think good enough for now
     def retranslate_ui(self, Form):
         """Adds text to created UI elements"""
 
@@ -214,6 +225,13 @@ class UiForm:
 
     def vtotalscanner(self):
         """Python system call that runs script that runs vtotalscanner scripts"""
+<<<<<<< HEAD
+=======
+
+        os.system("./filetypescan.sh")
+
+import main_rc
+>>>>>>> PEP8/257 cleanup round #2, I think good enough for now
 
         os.system("./filetypescan.sh")
 
