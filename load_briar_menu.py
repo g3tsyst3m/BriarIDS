@@ -46,8 +46,8 @@ class UiForm:
         """
 
         Form.setObjectName(_fromUtf8("Form"))
-        Form.setFixedSize(QtCore.QSize(454, 503))
-
+        Form.setFixedSize(QtCore.QSize(454, 703))
+        
         self.gridLayout = QtGui.QGridLayout(Form)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.line_2 = QtGui.QFrame(Form)
