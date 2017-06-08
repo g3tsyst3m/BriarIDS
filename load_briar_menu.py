@@ -185,18 +185,18 @@ class UiForm:
     def install(self):
         """Runs the suricata install bash shell script when 'Install Suricata' button pressed"""
 
-        print ("Installation routine initializing...")
+        print("Installation routine initializing...")
         os.system("x-terminal-emulator -e './suricata-install-script.sh'")
 
     def runtheprog(self):
         """Start's suricata when 'Run Suricata' button pressed"""
 
         monint = str(self.comboBox.currentText())
-        print ("Configuring interface using Ethtool...")
+        print("Configuring interface using Ethtool...")
         os.system("ethtool -K " + monint + " tx off rx off sg off gso off gro off" + " 2>/dev/null")
-        print ("Note: You can view your alert logs by issuing the following command: tail -f /var/log/suricata/http.log /var/log/suricata/fast.log")
-        print ("Even better, you are encouraged to use the new WEB GUI log management interface, TheBriarPatch, specifically for BriarIDS!")
-        print ("Go here to clone it: https://github.com/musicmancorley/TheBriarPatch")
+        print("Note: You can view your alert logs by issuing the following command: tail -f /var/log/suricata/http.log /var/log/suricata/fast.log")
+        print("Even better, you are encouraged to use the new WEB GUI log management interface, TheBriarPatch, specifically for BriarIDS!")
+        print("Go here to clone it: https://github.com/musicmancorley/TheBriarPatch")
         os.system("sleep 5")
         print("Starting Suricata!!!")
         os.system("./rulecleanup.sh")
