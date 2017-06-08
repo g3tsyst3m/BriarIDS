@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+""" BriarIDS menu loader: Creates a python desktop application.
+
+Desktop application allows you to install Suricata, Bro, Critical Stack Agent 
+and Virus Total Scanner via selectable button options.  
+
+Follow wiki at https://github.com/musicmancorley/BriarIDS/wiki for latest docs.
+
+"""
 
 from PyQt4 import QtCore, QtGui
 import os
@@ -11,20 +19,35 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName(_fromUtf8("Form"))
-        #Form.resize(436, 517)
-        Form.setFixedSize(QtCore.QSize(454, 703))
-        #Form.setMinimumSize(QtCore.QSize(436, 400))
-        #Form.setMaximumSize(QtCore.QSize(454, 503))
 
+class UiForm:
+
+    """Primary class that creates the BriarIDS desktop application
+    
+    Creates the desktop application, as well as runs bash script's depending on which button is 
+    pressed.
+    
+    """
+
+    def setup_ui(self, Form):
+        """Sets up the outline of the UI.
+        
+        Instantiates all the classes from the pyQt4 program and then defines the size,shape, layout of
+        all the UI elements.
+        
+        param Form: pyQt4 form object
+        """
+
+        Form.setObjectName(_fromUtf8("Form"))
+        Form.setFixedSize(QtCore.QSize(454, 703))
+        
         self.gridLayout = QtGui.QGridLayout(Form)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.line_2 = QtGui.QFrame(Form)
@@ -114,19 +137,6 @@ class Ui_Form(object):
         self.pushButton_5.setFlat(False)
         self.pushButton_5.setObjectName(_fromUtf8("pushButton_5"))
         self.gridLayout.addWidget(self.pushButton_5, 6, 0, 1, 2)
-        #self.pushButton_3 = QtGui.QPushButton(Form)
-        #font = QtGui.QFont()
-        #font.setPointSize(12)
-        #font.setBold(True)
-        #font.setWeight(75)
-        #self.pushButton_3.setFont(font)
-        #self.pushButton_3.setAutoFillBackground(True)
-        #self.pushButton_3.setAutoDefault(False)
-        #self.pushButton_3.setDefault(False)
-        #self.pushButton_3.setFlat(False)
-        #self.pushButton_3.setObjectName(_fromUtf8("pushButton_3"))
-        #self.gridLayout.addWidget(self.pushButton_3, 9, 0, 1, 2)
-        
         self.pushButton_8 = QtGui.QPushButton(Form)
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -140,9 +150,12 @@ class Ui_Form(object):
         self.pushButton_8.setObjectName(_fromUtf8("pushButton_8"))
         self.gridLayout.addWidget(self.pushButton_8, 12, 0, 1, 2)
 
-        self.retranslateUi(Form)
+        self.retranslate_ui(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
-    def retranslateUi(self, Form):
+
+    def retranslate_ui(self, Form):
+        """Adds text to created UI elements"""
+
         Form.setWindowTitle(_translate("Form", "BriarIDS", None))
         self.pushButton.setToolTip(_translate("Form", "This installs Suricata and also checks if Suricata is already installed", None))
         self.pushButton.setText(_translate("Form", "Install Suricata", None))
@@ -151,9 +164,6 @@ class Ui_Form(object):
         self.pushButton_2.setToolTip(_translate("Form", "This starts the Suricata IDS engine and displays log alerts in the terminal", None))
         self.pushButton_2.setText(_translate("Form", "Run Suricata", None))
         self.pushButton_2.clicked.connect(self.runtheprog)
-        #self.pushButton_3.setToolTip(_translate("Form", "This checks for most recent updates...", None))
-        #self.pushButton_3.setText(_translate("Form", "Check for Updates from GitHub", None))
-        #self.pushButton_3.clicked.connect(self.updatecheck)
         self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
         self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
         self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
@@ -162,7 +172,7 @@ class Ui_Form(object):
         self.pushButton_4.clicked.connect(self.configcheck)
         self.pushButton_8.setToolTip(_translate("Form", "Runs the VirusTotal Scanner against your extracted files!", None))
         self.pushButton_8.setText(_translate("Form", "Virus Total File Scanner (new!)", None))
-        self.pushButton_8.clicked.connect(self.Vtotalscanner)
+        self.pushButton_8.clicked.connect(self.vtotalscanner)
         self.comboBox.setItemText(0, _translate("Form", "eth0", None))
         self.comboBox.setItemText(1, _translate("Form", "eth1", None))
         self.comboBox.setItemText(2, _translate("Form", "eth2", None))
@@ -171,26 +181,40 @@ class Ui_Form(object):
         self.comboBox.setItemText(5, _translate("Form", "wlan0", None))
         self.comboBox.setItemText(6, _translate("Form", "wlan1", None))
         self.label_3.setText(_translate("Form", "<span style='font-size:8pt'>CHOOSE SURICATA MONITOR INTERFACE:</span>", None))
-    def install(self):
-        print ("Installation routine initializing...")
-        os.system("x-terminal-emulator -e './suricata-install-script.sh'")
-    def runtheprog(self):
-        monint=str(self.comboBox.currentText())
-        print ("Configuring interface using Ethtool...")
-        os.system("ethtool -K "+monint+" tx off rx off sg off gso off gro off" + " 2>/dev/null")
-        print ("Note: You can view your alert logs by issuing the following command: tail -f /var/log/suricata/http.log /var/log/suricata/fast.log")
-        print ("Even better, you are encouraged to use the new WEB GUI log management interface, TheBriarPatch, specifically for BriarIDS!")
-        print ("Go here to clone it: https://github.com/musicmancorley/TheBriarPatch")
-        os.system("sleep 5")
-        print "Starting Suricata!!!"
-        os.system("./rulecleanup.sh")
-        mycommand='/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet='+monint+" &"
-        os.system("x-terminal-emulator -e "+mycommand)
-    def configcheck(self):
-        os.system("./configcheck.sh")
-    def brointelinstall(self):
-        os.system("./bromenu.sh")
-    def Vtotalscanner(self):
-        os.system("./filetypescan.sh") 
-import main_rc
 
+    def install(self):
+        """Runs the suricata install bash shell script when 'Install Suricata' button pressed"""
+
+        print("Installation routine initializing...")
+        os.system("x-terminal-emulator -e './suricata-install-script.sh'")
+
+    def runtheprog(self):
+        """Start's suricata when 'Run Suricata' button pressed"""
+
+        monint = str(self.comboBox.currentText())
+        print("Configuring interface using Ethtool...")
+        os.system("ethtool -K " + monint + " tx off rx off sg off gso off gro off" + " 2>/dev/null")
+        print("Note: You can view your alert logs by issuing the following command: tail -f /var/log/suricata/http.log /var/log/suricata/fast.log")
+        print("Even better, you are encouraged to use the new WEB GUI log management interface, TheBriarPatch, specifically for BriarIDS!")
+        print("Go here to clone it: https://github.com/musicmancorley/TheBriarPatch")
+        os.system("sleep 5")
+        print("Starting Suricata!!!")
+        os.system("./rulecleanup.sh")
+        mycommand = '/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet=' + monint + " &"
+        os.system("x-terminal-emulator -e " + mycommand)
+
+    def configcheck(self):
+        """Python system call that runs script that makes sure BriarIDS is installed and that a WAN IP entered"""
+
+        os.system("./configcheck.sh")
+
+    def brointelinstall(self):
+        """Python system call that runs script that installs/configures Bro."""
+        os.system("./bromenu.sh")
+
+    def vtotalscanner(self):
+        """Python system call that runs script that runs vtotalscanner scripts"""
+
+        os.system("./filetypescan.sh")
+
+import main_rc
