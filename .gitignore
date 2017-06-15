@@ -1,2 +1,5 @@
 *.pyc
 .idea
+BriarIDS.iml
+briar.egg-info/
+dist/

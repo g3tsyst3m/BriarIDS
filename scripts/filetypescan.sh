@@ -41,7 +41,7 @@ elif [[ $? == 1 ]] ; then
 echo "No filetype selected...defaulting to simply displaying the file information found."
 fi
 
-./filetypescan_part2.sh
+filetypescan_part2.sh
 sed -i "/\python \$vtotlocation \/var\/log\/suricata\/files\/\$listy1/c\#python \$vtotlocation \/var\/log\/suricata\/files\/\$listy1" filetypescan_part2.sh
 sed -i "/\python \$vtotlocation \/var\/log\/suricata\/files\/\$listy2/c\#python \$vtotlocation \/var\/log\/suricata\/files\/\$listy2" filetypescan_part2.sh
 sed -i "/\python \$vtotlocation \/var\/log\/suricata\/files\/\$listy3/c\#python \$vtotlocation \/var\/log\/suricata\/files\/\$listy3" filetypescan_part2.sh
