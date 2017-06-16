@@ -11,6 +11,7 @@ Follow wiki at https://github.com/musicmancorley/BriarIDS/wiki for latest docs.
 from PyQt4 import QtCore, QtGui
 import os
 
+
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -186,7 +187,7 @@ class UiForm:
         """Runs the suricata install bash shell script when 'Install Suricata' button pressed"""
 
         print("Installation routine initializing...")
-        os.system("x-terminal-emulator -e './suricata-install-script.sh'")
+        os.system("sudo x-terminal-emulator -e '/usr/local/bin/./suricata-install-script.sh'")
 
     def runtheprog(self):
         """Start's suricata when 'Run Suricata' button pressed"""
@@ -199,22 +200,22 @@ class UiForm:
         print("Go here to clone it: https://github.com/musicmancorley/TheBriarPatch")
         os.system("sleep 5")
         print("Starting Suricata!!!")
-        os.system("./rulecleanup.sh")
+        os.system("sudo /usr/local/bin/./rulecleanup.sh")
         mycommand = '/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet=' + monint + " &"
-        os.system("x-terminal-emulator -e " + mycommand)
+        os.system("sudo x-terminal-emulator -e " + mycommand)
 
     def configcheck(self):
         """Python system call that runs script that makes sure BriarIDS is installed and that a WAN IP entered"""
 
-        os.system("./configcheck.sh")
+        os.system("/usr/local/bin/./configcheck.sh")
 
     def brointelinstall(self):
         """Python system call that runs script that installs/configures Bro."""
-        os.system("./bromenu.sh")
+        os.system("/usr/local/bin/./bromenu.sh")
 
     def vtotalscanner(self):
         """Python system call that runs script that runs vtotalscanner scripts"""
 
-        os.system("./filetypescan.sh")
+        os.system("/usr/local/bin/./filetypescan.sh")
 
 import main_rc
