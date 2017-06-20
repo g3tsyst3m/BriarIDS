@@ -200,7 +200,9 @@ class UiForm:
         os.system("sleep 5")
         print("Starting Suricata!!!")
         os.system("./rulecleanup.sh")
-        mycommand = '/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet=' + monint + " &"
+        mycommand = '/opt/suricata/bin/suricata -c /opt/suricata/etc/suricata/suricata.yaml --af-packet=' + monint + " -D"
+        print("Suricata has been started and has been minimized/daemonized")
+        print("please allow 30-60 seconds for it to complete the initialization process")
         os.system("x-terminal-emulator -e " + mycommand)
 
     def configcheck(self):
