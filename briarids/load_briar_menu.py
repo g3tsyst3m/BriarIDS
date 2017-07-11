@@ -207,15 +207,15 @@ class UiForm:
     def configcheck(self):
         """Python system call that runs script that makes sure BriarIDS is installed and that a WAN IP entered"""
 
-        os.system("/usr/local/bin/./configcheck.sh")
+        os.system("sudo /usr/local/bin/./configcheck.sh")
 
     def brointelinstall(self):
         """Python system call that runs script that installs/configures Bro."""
-        os.system("/usr/local/bin/./bromenu.sh")
+        os.system("sudo /usr/local/bin/./bromenu.sh")
 
     def vtotalscanner(self):
         """Python system call that runs script that runs vtotalscanner scripts"""
 
-        os.system("/usr/local/bin/./filetypescan.sh")
+        os.system("sudo /usr/local/bin/./filetypescan.sh")
 
 import main_rc
