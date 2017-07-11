@@ -55,5 +55,5 @@ sed -i "/\python \$vtotlocation \/var\/log\/suricata\/files\/\$listy1/c\#python 
 sed -i "/\python \$vtotlocation \/var\/log\/suricata\/files\/\$listy2/c\#python \$vtotlocation \/var\/log\/suricata\/files\/\$listy2" /usr/local/bin/./filetypescan_part2.sh
 sed -i "/\python \$vtotlocation \/var\/log\/suricata\/files\/\$listy3/c\#python \$vtotlocation \/var\/log\/suricata\/files\/\$listy3" /usr/local/bin/./filetypescan_part2.sh
 
-sudo sed -i "/\python \$vtotlocation \/var\/log\/suricata\/files\/\$listy4/c\#python \$vtotlocation \/var\/log\/suricata\/files\/\$listy4" /usr/local/bin/./filetypescan_part2.sh
+sed -i "/\python \$vtotlocation \/var\/log\/suricata\/files\/\$listy4/c\#python \$vtotlocation \/var\/log\/suricata\/files\/\$listy4" /usr/local/bin/./filetypescan_part2.sh
 
