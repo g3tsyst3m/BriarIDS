@@ -22,7 +22,7 @@ sleep 3
 fi
 
 if [[ $choice == "1" ]]; then
-sudo ./bro-installer.sh
+sudo /usr/local/bin/./bro-installer.sh
 fi
 
 
