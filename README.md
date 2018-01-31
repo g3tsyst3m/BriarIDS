@@ -12,12 +12,12 @@ Feeling generous?  Why not shoot me a $1, $5, or whatever your heart compels you
 
 Thank you all for the donations received in the last year.  I do truly appreciate your support!
 
-If BriarIDS is used for educational purposes in the classroom setting (ie. Network Security courses, etc) please send me some feedack if you dont' mind, letting me know how it cooperated.  Thanks!
+If BriarIDS is used for educational purposes in the classroom setting (ie. Network Security courses, etc) please send me some feedback if you don't mind, letting me know how it cooperated.  Thanks!
 Here's my email: musicmancorley@gmail.com
 
 ## Introduction
 
-A simple yet effective IDS for the Raspberry PI.  BriarIDS is configured to work with Raspbian and takes advantage of the PyQT GUI frontend for an all-in-one solution that monitors your home network.  Bro is now integrated into the BriarIDS GUI for additional logging options.  Snorby is still a work in progress concerning an automated installation.  Will post progress notes on wordpress site periodically.  
+A simple yet effective IDS for the Raspberry PI.  BriarIDS is configured to work with Raspbian and takes advantage of the PyQT GUI frontend for an all-in-one solution that monitors your home network.  Bro is now integrated into the BriarIDS GUI for additional logging options.  Snorby is still a work in progress concerning an automated installation.  Will post progress notes on Wordpress site periodically.  
 
 <img src="https://github.com/musicmancorley/BriarIDS/blob/master/images/briar_updated.png?raw=true" style="float:right">
 
@@ -38,7 +38,7 @@ Raspbian, DietPI
 
 ## Can this be ported to other OSes?
 
-Yes.  You may need to adjust some of the apt packages depending on the linux flavor you are using.  I've installed it successfully on Kali Linux (Debian 4.8.15-1kali1 (2016-12-23) x86_64 GNU/Linux). Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate with the exception of the critical-stack agent and libssl.  You will want to download the intel x86/x64 .deb file versus the .arm deb file currently set to download in the script.  As for ssl, bro-2.5 only currently supports libssl1.0-dev so make sure you have that installed if installing on kali linux or other new repos.
+Yes.  You may need to adjust some of the apt packages depending on the Linux flavor you are using.  I've installed it successfully on Kali Linux (Debian 4.8.15-1kali1 (2016-12-23) x86_64 GNU/Linux). Try it out in a VM running the latest Debian or Ubuntu.  It should cooperate with the exception of the critical-stack agent and libssl.  You will want to download the Intel x86/x64 .deb file versus the .arm deb file currently set to download in the script.  As for ssl, bro-2.5 only currently supports libssl1.0-dev so make sure you have that installed if installing on Kali Linux or other new repos.
 
 ## What Router(s) have you tested this with?
 
