@@ -1,5 +1,12 @@
 # BriarIDS
 
+
+## UPDATE 3/15/2018
+<hr>
+I apologize for the lengthy delay in maintaining this project.  I plan on including support for the latest raspberry pi OSes, including pinebook and also including the latest version of Suricata.  Bro will also be updated to the most current available version and various other items requiring attention.  Thanks as always for supporting BriarIDS <br>
+-Robbie
+<hr>
+
 Check out the new Donors page!  I huge thanks to all those who support BriarIDS: [**Donors**](https://github.com/musicmancorley/BriarIDS/wiki/Donors)<br>
 I can also be reached at [**BriarIDS Google Groups**](https://groups.google.com/forum/#!forum/briarids).  Feel free to join the group to collaborate and contribute on any and all discussion matters surrounding BriarIDS!<br>
 *Also be sure to check out the [**WIKI**](https://github.com/musicmancorley/BriarIDS/wiki) for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information.  Also, I've just recently rolled out [a web Frontend for viewing logs captured by suricata](https://github.com/musicmancorley/TheBriarPatch).  Please do [check it out](https://github.com/musicmancorley/TheBriarPatch) and let me know what you think!*
