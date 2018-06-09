@@ -1,9 +1,12 @@
 # BriarIDS
 
 
-## UPDATE 3/15/2018
+## UPDATE 6/9/2018
 <hr>
-I apologize for the lengthy delay in maintaining this project.  I plan on including support for the latest raspberry pi OSes, including pinebook and also including the latest version of Suricata.  Bro will also be updated to the most current available version and various other items requiring attention.  Thanks as always for supporting BriarIDS <br>
+In the words of Frank Costanza, I'm back Baby! It's been a long time since I've had the chance to visit this project.  I've been trying for my CISSP for 2 years now.  TL;DR, I passed.  Now that I can breath again, here are some changes I've made recenty:<br>
+--> I've included support for Ubuntu for the raspberry pi in addition to Raspbian/Debian based distros.<br>
+--> I've also added in automatic monitoring interface detection and included email notifications for TheBriarPatch.<br>
+Thanks as always for supporting BriarIDS <br>
 -Robbie
 <hr>
 
