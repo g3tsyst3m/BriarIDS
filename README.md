@@ -3,7 +3,7 @@
 
 ## UPDATE 6/9/2018
 <hr>
-In the words of Frank Costanza, I'm back Baby! It's been a long time since I've had the chance to visit this project.  I've been trying for my CISSP for 2 years now.  TL;DR, I passed.  Now that I can breath again, here are some changes I've made recenty:<br>
+In the words of Frank Costanza, I'm back Baby! It's been a long time since I've had the chance to visit this project.  I've been trying for my CISSP for 2 years now.  TL;DR, I passed.  Now that I can breathe again, here are some changes I've made recenty:<br>
 --> I've included support for Ubuntu for the raspberry pi in addition to Raspbian/Debian based distros.<br>
 --> I've also added in automatic monitoring interface detection and included email notifications for TheBriarPatch.<br>
 Thanks as always for supporting BriarIDS <br>
