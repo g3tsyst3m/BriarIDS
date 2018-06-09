@@ -9,7 +9,7 @@ Follow wiki at https://github.com/musicmancorley/BriarIDS/wiki for latest docs.
 """
 
 from PyQt4 import QtCore, QtGui
-import os
+import os, subprocess
 
 
 try:
@@ -156,7 +156,6 @@ class UiForm:
 
     def retranslate_ui(self, Form):
         """Adds text to created UI elements"""
-
         Form.setWindowTitle(_translate("Form", "BriarIDS", None))
         self.pushButton.setToolTip(_translate("Form", "This installs Suricata and also checks if Suricata is already installed", None))
         self.pushButton.setText(_translate("Form", "Install Suricata", None))
@@ -174,13 +173,14 @@ class UiForm:
         self.pushButton_8.setToolTip(_translate("Form", "Runs the VirusTotal Scanner against your extracted files!", None))
         self.pushButton_8.setText(_translate("Form", "Virus Total File Scanner (new!)", None))
         self.pushButton_8.clicked.connect(self.vtotalscanner)
-        self.comboBox.setItemText(0, _translate("Form", "eth0", None))
-        self.comboBox.setItemText(1, _translate("Form", "eth1", None))
-        self.comboBox.setItemText(2, _translate("Form", "eth2", None))
-        self.comboBox.setItemText(3, _translate("Form", "eth3", None))
-        self.comboBox.setItemText(4, _translate("Form", "eth4", None))
-        self.comboBox.setItemText(5, _translate("Form", "wlan0", None))
-        self.comboBox.setItemText(6, _translate("Form", "wlan1", None))
+        output = subprocess.check_output('sudo ip r show|grep " src "|cut -d " " -f 3,12 | awk \'{print $1}\'', shell=True)
+        self.comboBox.setItemText(0, _translate("Form", output, None))
+        self.comboBox.setItemText(1, _translate("Form", "eth0", None))
+        self.comboBox.setItemText(2, _translate("Form", "eth1", None))
+        self.comboBox.setItemText(3, _translate("Form", "eth2", None))
+        self.comboBox.setItemText(4, _translate("Form", "wlan0", None))
+        self.comboBox.setItemText(5, _translate("Form", "wlan1", None))
+        self.comboBox.setItemText(6, _translate("Form", "wlan2", None))
         self.label_3.setText(_translate("Form", "<span style='font-size:8pt'>CHOOSE SURICATA MONITOR INTERFACE:</span>", None))
 
     def install(self):
@@ -215,7 +215,6 @@ class UiForm:
 
     def vtotalscanner(self):
         """Python system call that runs script that runs vtotalscanner scripts"""
-
         os.system("sudo /usr/local/bin/./filetypescan.sh")
 
 import main_rc

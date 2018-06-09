@@ -3,5 +3,6 @@
 BriarIDS.iml
 briar.egg-info/
 dist/
+build/
 /untitled
 

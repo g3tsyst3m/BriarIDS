@@ -6,6 +6,7 @@ Creates main class and makes sure it only runs on command line.
 
 import os
 import sys
+#import subprocess
 
 try:
     from PyQt4 import QtCore, QtGui
@@ -27,7 +28,8 @@ class Main(QtGui.QWidget):
 
         super(Main, self).__init__()
         print "loading main menu..."
-
+        #output = subprocess.check_output('sudo ip r show|grep " src "|cut -d " " -f 3,12 | awk \'{print $1}\'', shell=True)
+        #print output
         # name of gui python script
         self.ui = load_briar_menu.UiForm()
         self.ui.setup_ui(self)
