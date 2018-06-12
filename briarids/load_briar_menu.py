@@ -173,7 +173,9 @@ class UiForm:
         self.pushButton_8.setToolTip(_translate("Form", "Runs the VirusTotal Scanner against your extracted files!", None))
         self.pushButton_8.setText(_translate("Form", "Virus Total File Scanner (new!)", None))
         self.pushButton_8.clicked.connect(self.vtotalscanner)
-        output = subprocess.check_output('sudo ip r show|grep " src "|cut -d " " -f 3,12 | awk \'{print $1}\'', shell=True)
+        output = subprocess.check_output("sudo ip r sh | awk 'NR==1{print $5}'",shell=True)
+        #Ubuntu specific
+        #output = subprocess.check_output('sudo ip r show|grep " src "|cut -d " " -f 3,12 | awk \'{print $1}\'', shell=True)
         self.comboBox.setItemText(0, _translate("Form", output, None))
         self.comboBox.setItemText(1, _translate("Form", "eth0", None))
         self.comboBox.setItemText(2, _translate("Form", "eth1", None))
