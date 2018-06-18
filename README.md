@@ -9,7 +9,7 @@ In the words of Frank Costanza, I'm back Baby! It's been a long time since I've 
  - Added in support for a progress bar to appear indicating status of installation for Bro and Suricata installations!
  - Added in automatic monitoring interface detection and included email notifications for TheBriarPatch.<br>
  - Now includes the latest suricata version, 4.0.4<br>
- - Updated from PyQt4 to PyQt5<br
+ - Updated from PyQt4 to PyQt5<br>
  - Implemented threading<br>
  - Updated to latest version of Bro<br>
  - Now installed with support for md5 and sha256 file hasing for malicious file detection<br>
