@@ -1,8 +1,9 @@
 #!/bin/bash
-touch install_log.log
-rm install_log.log
+touch /usr/local/src/install_log.log
+rm /usr/local/src/install_log.log
 
-ls /opt/suricata/etc/suricata/BriarIDS_installed
+ls /opt/suricata/etc/suricata/BriarIDS_installed 2>/dev/null
+#echo $?
 if [ $? == 0 ] ; then
    clear
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -13,13 +14,12 @@ if [ $? == 0 ] ; then
    exit
    else
    clear
-   echo "Doesn't look like you have installed BriarIDS.  Continuing with installation..."
-   zenity --info --text="There is an install log file that gets created and added to that can be viewed by issuing the following command: tail -f /usr/local/src/install_log.log.  If you wish to follow the installation progress or be aware of installation issues, refer to this log at any point during installation." &> /dev/null
+   echo "[Doesn't look like you have installed BriarIDS.  Continuing with the installation...]"
    fi
 
 
 echo "#######################################################"
-echo "# BriarIDS install script for Raspian OS (raspberry pi)"
+echo "# BriarIDS Suricata install script for the raspberry pi"
 echo "#------------------------------------------------------"
 echo "#######################################################"
 sleep 3
@@ -27,80 +27,16 @@ echo "--------------------------------"
 echo "make sure you are ROOT for this!"
 echo "--------------------------------"
 sleep 3
-echo "Gettin' the dependencies..."
-apt-get update
-apt-get -y install build-essential locate lxterminal cmake autoconf libcanberra-gtk* automake libtool libpcap-dev libnet1-dev \
-libyaml-0-2 libyaml-dev zlib1g zlib1g-dev libcap-ng-dev libcap-ng0 \
-make flex bison git git-core subversion libmagic-dev \
-libgeoip1 libgeoip-dev libjansson4 libjansson-dev python-simplejson libnss3-dev libnspr4-dev \
-libnetfilter-queue-dev libnetfilter-queue1 libnfnetlink-dev libnfnetlink0 >> /usr/local/src/install_log.log
-if [ $? != 0 ] ; then
-   clear
-   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
-   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   sleep 5
-   exit
-   else
-   clear
-   echo "so far so good ;)"
-   fi
-echo "######################################################################################"
-echo "Downloading and compiling pcre from source "
-echo "since apt version is blacklisted/vulnerable"
-echo "######################################################################################"
-sleep 3
-echo "Also moving us into /usr/local/src as our homebase for install/downloaded files"
-sleep 2
+echo "Phase-1: Gettin' the dependencies..."
+apt-get update 
 
-cd /usr/local/src
-wget https://sourceforge.net/projects/pcre/files/pcre/8.38/pcre-8.38.tar.gz/download
-if [ $? != 0 ] ; then
-   clear
-   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
-   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   sleep 5
-   exit
-   else
-   clear
-   echo "so far so good ;)"
-   fi
-tar xvf download
-rm download
-cd pcre*
-echo "configuring PCRE...please wait"
-./configure >> /usr/local/src/install_log.log
-if [ $? != 0 ] ; then
-   clear
-   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
-   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   sleep 5
-   exit
-   else
-   clear
-   echo "so far so good ;)"
-   fi
-echo "issuing MAKE command.  This could take a bit to complete so please be patient..."
-make >> /usr/local/src/install_log.log
-if [ $? != 0 ] ; then
-   clear
-   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
-   echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-   sleep 5
-   exit
-   else
-   clear
-   echo "so far so good ;)"
-   fi
-echo "issuing 'make install' command"
-make install >> /usr/local/src/install_log.log
+
+apt-get -y install libpcre3 libpcre3-dbg libpcre3-dev \
+build-essential autoconf automake libtool libpcap-dev libnet1-dev \
+libyaml-0-2 libyaml-dev zlib1g zlib1g-dev libcap-ng-dev libcap-ng0 \
+make libmagic-dev libjansson-dev libjansson4 pkg-config libnetfilter-queue-dev \
+libnetfilter-queue1 libnfnetlink-dev libnss3-dev libnspr4-dev libnfnetlink0 
+
 if [ $? != 0 ] ; then
    clear
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -115,17 +51,16 @@ if [ $? != 0 ] ; then
    fi
 
 echo "Now it's time to install SURICATA!"
-echo "This takes about 30 - 45 minutes total to complete configure -> make install or longer depending on PI unit used"
+echo "This can take up to 30-45 minutes total to complete configure -> make install or longer depending on PI unit used"
 
 sleep 3
 cd /usr/local/src
-
-wget "http://www.openinfosecfoundation.org/download/suricata-3.0.1.tar.gz" >> /usr/local/src/install_log.log
+VER=4.0.4
+wget "http://www.openinfosecfoundation.org/download/suricata-$VER.tar.gz"
 if [ $? != 0 ] ; then
    clear
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    sleep 5
    exit
@@ -133,70 +68,68 @@ if [ $? != 0 ] ; then
    clear
    echo "so far so good ;)"
    fi
-tar xvf suricata*
+tar xvf suricata* 
 rm *.gz
 cd suricata*
-echo "ok, issuing the configure command.  Please be patient while this completes..."
-./configure --enable-nfqueue --prefix=/opt/suricata --sysconfdir=/opt/suricata/etc --localstatedir=/var
+echo "Phase-2: Issuing the configure command.  Please be patient while this completes..."
+./configure --enable-nfqueue --with-libnss-libraries=/usr/lib --with-libnss-includes=/usr/include/nss/ --with-libnspr-libraries=/usr/lib --with-libnspr-includes=/usr/include/nspr --prefix=/opt/suricata --sysconfdir=/opt/suricata/etc --localstatedir=/var
 if [ $? != 0 ] ; then
    clear
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    sleep 5
    exit
    else
    clear
-   echo "so far so good ;)"
+   echo "configure command finished without errors ;)"
    fi
-echo "issuing the MAKE command...this could take a bit to complete so please be patient..."
-make >> /usr/local/src/install_log.log
+echo "Phase-3: Issuing the MAKE command...this could take a bit to complete so please be patient..."
+make
 if [ $? != 0 ] ; then
    clear
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    sleep 5
    exit
    else
    clear
-   echo "so far so good ;)"
+   echo "MAKE command finished without errors ;)"
    fi
-echo "issuing the 'make install' command..."
-make install-full >> /usr/local/src/install_log.log
+echo "Phase-4: Issuing the 'make install' command..."
+make install-full
 if [ $? != 0 ] ; then
    clear
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    sleep 5
    exit
    else
    clear
-   echo "so far so good ;)"
+   echo "Phase-5: finalizing installation!"
    fi
 ldconfig
 echo "installing ethtool..."
-apt-get install -y ethtool >> /usr/local/src/install_log.log
+apt-get install -y ethtool 
 if [ $? != 0 ] ; then
    clear
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    echo "There was an error..."
-   echo "review the log file:: '/usr/local/src/install_log.log' for more info"
    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
    sleep 5
    exit
    else
    clear
-   echo "so far so good ;)"
+   echo "almost done!"
    fi
 
+echo "enabling http-log for capturing http log traffic"
+sed -i '/http-log:/!b;n;s/enabled: no/enabled: yes/' /opt/suricata/etc/suricata/suricata.yaml
 echo "touching the BriarIDS_installed file to show suricata is installed for the Raspberry PI unit"
 touch /opt/suricata/etc/suricata/BriarIDS_installed
-echo "You made it!  Installation was a success.  You can give it a test run now by following the commands below or just close this terminal.  You installation of suricata is complete"
+echo "You made it!  Installation was a success.  You can give it a test run now by following the commands below or just close this terminal.  Your installation of suricata is complete"
 echo "To continue the test run, please select the interface you would like to monitor: examples: eth0/eth1/wlan0,etc"
 read yourinterface
 ethtool -K $yourinterface tx off rx off sg off gso off gro off

@@ -13,7 +13,7 @@ echo "5. Stop Bro"
 echo "6. Check Bro Status"
 echo "7. Show captured files"
 echo "8. Exit"
-echo -n ":"
+echo "Enter choice:"
 read choice
 
 if [ -z "$choice" ]; then

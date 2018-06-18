@@ -7,13 +7,15 @@ Creates main class and makes sure it only runs on command line.
 import os
 import sys
 #import subprocess
-
+#needs python3-pip
+#also sudo apt-get install python3-pyqt5
 try:
-    from PyQt4 import QtCore, QtGui
-    from PyQt4.QtCore import QTimer
+    from PyQt5 import QtCore, QtGui, QtWidgets
+    from PyQt5.QtCore import QTimer
+    from PyQt5.QtWidgets import QApplication
 except ImportError:
-    print 'pyqt not installed...installing now.'
-    os.system("sudo apt-get install python-qt4 -y")
+    print ('pyqt5 not installed...installing now.')
+    os.system("sudo apt-get install python-pyqt5 -y")
     raise ImportError("ok done installing try running Briar now!")
 
 os.system("sudo /usr/local/bin/./checkXauth.sh")
@@ -22,12 +24,12 @@ os.system("sudo /usr/local/bin/./updatecheck.sh")
 import load_briar_menu
 
 
-class Main(QtGui.QWidget):
+class Main(QtWidgets.QWidget):
 
     def __init__(self):
 
         super(Main, self).__init__()
-        print "loading main menu..."
+        print ("loading main menu...")
         #output = subprocess.check_output('sudo ip r show|grep " src "|cut -d " " -f 3,12 | awk \'{print $1}\'', shell=True)
         #print output
         # name of gui python script
@@ -37,7 +39,7 @@ class Main(QtGui.QWidget):
 
 def main():
 
-    app = QtGui.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     app.setStyle("plastique")
 
     main = Main()

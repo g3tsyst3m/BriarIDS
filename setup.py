@@ -6,7 +6,7 @@ setup(name='briar',
       author_email='sifiebel@gmail.com',
       packages=find_packages(),
       url='https://github.com/musicmancorley/BriarIDS',
-      scripts=['scripts/bro-installer.sh', 'scripts/bromenu.sh', 'scripts/checkXauth.sh', 'scripts/configcheck.sh', 'scripts/filetypescan.sh', 'scripts/filetypescan_part2.sh', 'scripts/suricata-install-script.sh', 'scripts/updatecheck.sh', 'scripts/rulecleanup.sh'],
+      scripts=['scripts/bro-installer.sh', 'scripts/bro-alienvaultintel-installer.sh', 'scripts/bromenu.sh', 'scripts/checkXauth.sh', 'scripts/configcheck.sh', 'scripts/filetypescan.sh', 'scripts/filetypescan_part2.sh', 'scripts/suricata-install-script.sh', 'scripts/updatecheck.sh', 'scripts/rulecleanup.sh'],
       entry_points={
           'console_scripts': ['briar=briarids.briar_ids:main', ],
 
