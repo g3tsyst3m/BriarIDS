@@ -3,7 +3,8 @@
 
 ## UPDATE 6/18/2018
 <hr>
-In the words of Frank Costanza, I'm back Baby! It's been a long time since I've had the chance to visit this project.  I've been trying for my CISSP for 2 years now.  TL;DR, I passed.  Now that I can breathe again, here are some changes I've made recenty:<br>
+In the words of Frank Costanza, I'm back Baby! It's been a long time since I've had the chance to visit this project.  I've been trying for my CISSP for 2 years now.  TL;DR, I passed.  Now that I can breathe again, here are some changes I've made recenty:
+
  - Included support for Ubuntu for the raspberry pi in addition to Raspbian/Debian based distros.<br>
  - Added in automatic monitoring interface detection and included email notifications for TheBriarPatch.<br>
  - Now includes the latest suricata version, 4.0.4<br>
