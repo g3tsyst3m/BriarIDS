@@ -190,6 +190,7 @@ class UiForm:
         self.pushButton_2.setToolTip(_translate("Form", "Run Suricata"))
         self.pushButton_2.setText(_translate("Form", "Run Suricata"))
         self.pushButton_2.clicked.connect(self.runtheprog)
+<<<<<<< HEAD
         
         self.pushButton_5.setToolTip(_translate("Form", "Configure Alienvault Intel Feed"))
         self.pushButton_5.setText(_translate("Form", "Configure Alienvault Intel Feed"))
@@ -204,6 +205,31 @@ class UiForm:
         else:
             self.pushButton_3.setText(_translate("Form", "Install Bro"))
             self.pushButton_3.setToolTip(_translate("Form", "Install Bro"))
+=======
+        self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
+        self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
+        self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
+        self.pushButton_5.setText(_translate("Form", "Install/Configure/Run Bro AND Intel Agent!", None))
+        self.pushButton_5.clicked.connect(self.brointelinstall)
+        self.pushButton_4.clicked.connect(self.configcheck)
+        self.pushButton_8.setToolTip(_translate("Form", "Runs the VirusTotal Scanner against your extracted files!", None))
+        self.pushButton_8.setText(_translate("Form", "Virus Total File Scanner (new!)", None))
+        self.pushButton_8.clicked.connect(self.vtotalscanner)
+        output = subprocess.check_output("sudo ip r sh | awk 'NR==1{print $5}'",shell=True)
+        #Ubuntu specific
+        #output = subprocess.check_output('sudo ip r show|grep " src "|cut -d " " -f 3,12 | awk \'{print $1}\'', shell=True)
+        self.comboBox.setItemText(0, _translate("Form", output, None))
+        self.comboBox.setItemText(1, _translate("Form", "eth0", None))
+        self.comboBox.setItemText(2, _translate("Form", "eth1", None))
+        self.comboBox.setItemText(3, _translate("Form", "eth2", None))
+        self.comboBox.setItemText(4, _translate("Form", "wlan0", None))
+        self.comboBox.setItemText(5, _translate("Form", "wlan1", None))
+        self.comboBox.setItemText(6, _translate("Form", "wlan2", None))
+        self.label_3.setText(_translate("Form", "<span style='font-size:8pt'>CHOOSE SURICATA MONITOR INTERFACE:</span>", None))
+
+    def install(self):
+        """Runs the suricata install bash shell script when 'Install Suricata' button pressed"""
+>>>>>>> 17444a8f551659df9ae875ab81d5abb65b7f71bc
 
         self.pushButton_3.clicked.connect(self.brointelinstall)
         self.label_4.setText(_translate("Form", "Installation Progress:"))
