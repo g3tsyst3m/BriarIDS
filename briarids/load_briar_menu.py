@@ -191,9 +191,14 @@ class UiForm:
         self.pushButton_2.setText(_translate("Form", "Run Suricata"))
         self.pushButton_2.clicked.connect(self.runtheprog)
 
-        
-        self.pushButton_5.setToolTip(_translate("Form", "Configure Alienvault Intel Feed"))
-        self.pushButton_5.setText(_translate("Form", "Configure Alienvault Intel Feed"))
+        retvalue3=os.system("ls /opt/nsm/bro/share/bro/policy/bro-otx/otx.dat")
+        if retvalue3 != 0:
+            self.pushButton_5.setToolTip(_translate("Form", "Configure Alienvault Intel Feed"))
+            self.pushButton_5.setText(_translate("Form", "Configure Alienvault Intel Feed"))
+        else:
+            self.pushButton_5.setStyleSheet("background-color: rgb(0, 255, 0);")
+            self.pushButton_5.setToolTip(_translate("Form", "Alienvault Intel Feed installed!"))
+            self.pushButton_5.setText(_translate("Form", "Alienvault Intel Feed installed!"))
         self.pushButton_5.clicked.connect(self.bro_intel_config)
         
         retvalue2=os.system("ls /opt/nsm/bro/bro_install_complete")
@@ -280,6 +285,9 @@ class UiForm:
    #     os.system("sudo /usr/local/bin/./configcheck.sh")
     
     def bro_intel_config(self):
+        if "Alienvault Intel Feed installed!" in self.pushButton_5.text():
+            print("you've already installed the Bro Alienvault Intel Feed module.  Delete this file to reinstall: /opt/nsm/bro/share/bro/policy/bro-otx/otx.dat")
+            exit(0)
         os.system("sudo /usr/local/bin/./bro-alienvaultintel-installer.sh")
 
     def broinstall(self):
