@@ -240,7 +240,7 @@ class UiForm:
         if "Suricata installed!" in self.pushButton.text():
             print("you've already installed Suricata.  delete this file to reinstall: /opt/suricata/etc/suricata/BriarIDS_installed")
             exit(0)
-        self.label_4.show()
+        #self.label_4.show()
         self.progressBar.show()
         url = "sudo /usr/local/bin/./suricata-install-script.sh"
         self.threads = []
@@ -287,7 +287,7 @@ class UiForm:
         if "Bro installed!" in self.pushButton_3.text():
             print("you've already installed Bro.  delete this file to reinstall: /opt/nsm/bro/bro_install_complete")
             exit(0)
-        self.label_4.show()
+        #self.label_4.show()
         self.progressBar.show()
         url = "sudo /usr/local/bin/./bro-installer.sh"
         self.threads = []
