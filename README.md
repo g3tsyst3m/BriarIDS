@@ -37,7 +37,7 @@ Here's my email: musicmancorley@gmail.com
 
 A simple yet effective IDS for the Raspberry PI.  BriarIDS is configured to work with Raspbian and takes advantage of the PyQT GUI frontend for an all-in-one solution that monitors your home network.  Bro is now integrated into the BriarIDS GUI for additional logging options.  Snorby is still a work in progress concerning an automated installation.  Will post progress notes on Wordpress site periodically.  
 
-<img src="https://github.com/musicmancorley/BriarIDS/blob/master/images/briar_updated.png?raw=true" style="float:right">
+<img src="https://github.com/musicmancorley/BriarIDS/blob/master/images/newbriarids.PNG?raw=true" style="float:right">
 
 ## Why the name BriarIDS?
 
