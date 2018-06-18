@@ -190,7 +190,7 @@ class UiForm:
         self.pushButton_2.setToolTip(_translate("Form", "Run Suricata"))
         self.pushButton_2.setText(_translate("Form", "Run Suricata"))
         self.pushButton_2.clicked.connect(self.runtheprog)
-<<<<<<< HEAD
+
         
         self.pushButton_5.setToolTip(_translate("Form", "Configure Alienvault Intel Feed"))
         self.pushButton_5.setText(_translate("Form", "Configure Alienvault Intel Feed"))
@@ -205,7 +205,7 @@ class UiForm:
         else:
             self.pushButton_3.setText(_translate("Form", "Install Bro"))
             self.pushButton_3.setToolTip(_translate("Form", "Install Bro"))
-=======
+
         self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
         self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
         self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
@@ -229,7 +229,6 @@ class UiForm:
 
     def install(self):
         """Runs the suricata install bash shell script when 'Install Suricata' button pressed"""
->>>>>>> 17444a8f551659df9ae875ab81d5abb65b7f71bc
 
         self.pushButton_3.clicked.connect(self.brointelinstall)
         self.label_4.setText(_translate("Form", "Installation Progress:"))
