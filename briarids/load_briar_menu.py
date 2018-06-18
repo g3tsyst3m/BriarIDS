@@ -147,7 +147,7 @@ class UiForm:
         self.pushButton_3 = QtWidgets.QPushButton(Form)
         self.pushButton_3.setGeometry(QtCore.QRect(140, 490, 191, 51))
         self.pushButton_3.setStyleSheet("font: 11pt \"Lucida Handwriting\";")
-        self.pushButton_3.setObjectName("pushButton_5")
+        self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_5 = QtWidgets.QPushButton(Form)
         self.pushButton_5.setGeometry(QtCore.QRect(140, 550, 191, 21))
         self.pushButton_5.setStyleSheet("font: 11pt \"Lucida Handwriting\";")
@@ -205,32 +205,33 @@ class UiForm:
         else:
             self.pushButton_3.setText(_translate("Form", "Install Bro"))
             self.pushButton_3.setToolTip(_translate("Form", "Install Bro"))
+        self.pushButton_3.clicked.connect(self.broinstall)
 
-        self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
-        self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
-        self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
-        self.pushButton_5.setText(_translate("Form", "Install/Configure/Run Bro AND Intel Agent!", None))
-        self.pushButton_5.clicked.connect(self.brointelinstall)
-        self.pushButton_4.clicked.connect(self.configcheck)
-        self.pushButton_8.setToolTip(_translate("Form", "Runs the VirusTotal Scanner against your extracted files!", None))
-        self.pushButton_8.setText(_translate("Form", "Virus Total File Scanner (new!)", None))
-        self.pushButton_8.clicked.connect(self.vtotalscanner)
+#        self.pushButton_4.setToolTip(_translate("Form", "Add in your public/WAN IP", None))
+#        self.pushButton_4.setText(_translate("Form", "Add WAN IP to config for monitoring", None))
+#        self.pushButton_5.setToolTip(_translate("Form", "This installs Bro and the Critical Stack Intel Feed client", None))
+#        self.pushButton_5.setText(_translate("Form", "Install/Configure/Run Bro AND Intel Agent!", None))
+#        self.pushButton_5.clicked.connect(self.brointelinstall)
+#        self.pushButton_4.clicked.connect(self.configcheck)
+        #self.pushButton_8.setToolTip(_translate("Form", "Runs the VirusTotal Scanner against your extracted files!", None))
+        #self.pushButton_8.setText(_translate("Form", "Virus Total File Scanner (new!)", None))
+        #self.pushButton_8.clicked.connect(self.vtotalscanner)
         output = subprocess.check_output("sudo ip r sh | awk 'NR==1{print $5}'",shell=True)
         #Ubuntu specific
         #output = subprocess.check_output('sudo ip r show|grep " src "|cut -d " " -f 3,12 | awk \'{print $1}\'', shell=True)
-        self.comboBox.setItemText(0, _translate("Form", output, None))
-        self.comboBox.setItemText(1, _translate("Form", "eth0", None))
-        self.comboBox.setItemText(2, _translate("Form", "eth1", None))
-        self.comboBox.setItemText(3, _translate("Form", "eth2", None))
-        self.comboBox.setItemText(4, _translate("Form", "wlan0", None))
-        self.comboBox.setItemText(5, _translate("Form", "wlan1", None))
-        self.comboBox.setItemText(6, _translate("Form", "wlan2", None))
+        #self.comboBox.setItemText(0, _translate("Form", output, None))
+       # self.comboBox.setItemText(1, _translate("Form", "eth0", None))
+       # self.comboBox.setItemText(2, _translate("Form", "eth1", None))
+       # self.comboBox.setItemText(3, _translate("Form", "eth2", None))
+       # self.comboBox.setItemText(4, _translate("Form", "wlan0", None))
+       # self.comboBox.setItemText(5, _translate("Form", "wlan1", None))
+       # self.comboBox.setItemText(6, _translate("Form", "wlan2", None))
         self.label_3.setText(_translate("Form", "<span style='font-size:8pt'>CHOOSE SURICATA MONITOR INTERFACE:</span>", None))
 
     def install(self):
         """Runs the suricata install bash shell script when 'Install Suricata' button pressed"""
 
-        self.pushButton_3.clicked.connect(self.brointelinstall)
+        self.pushButton.clicked.connect(self.installsuri)
         self.label_4.setText(_translate("Form", "Installation Progress:"))
        
 
@@ -281,7 +282,7 @@ class UiForm:
     def bro_intel_config(self):
         os.system("sudo /usr/local/bin/./bro-alienvaultintel-installer.sh")
 
-    def brointelinstall(self):
+    def broinstall(self):
         """Python system call that runs script that installs/configures Bro."""
         if "Bro installed!" in self.pushButton_3.text():
             print("you've already installed Bro.  delete this file to reinstall: /opt/nsm/bro/bro_install_complete")
