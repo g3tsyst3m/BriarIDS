@@ -10,6 +10,7 @@ In the words of Frank Costanza, I'm back Baby! It's been a long time since I've 
  - Now includes the latest suricata version, 4.0.4<br>
  - Updated from PyQt4 to PyQt5<br
  - Implemented threading<br>
+ - Updated to latest version of Bro<br>
  - Now installed with support for md5 and sha256 file hasing for malicious file detection<br>
  - Implemented Alienvault intel feeds for Bro, which replaced the critical stack intel feeds<br>
       
