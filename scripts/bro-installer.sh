@@ -58,17 +58,4 @@ touch /opt/nsm/bro/bro_install_complete
 echo "Bro Install complete! Hit enter to continue or review your console output for any errors above this text."
 echo "hit enter to continue...please review console output above to check for any errors during make and make install"
 read
-clear
-echo "let's setup the Intel feed from CriticalStack."
-echo "Browse to this URL and sign up for a free account so you can use their security intel feeds with Bro: https://intel.criticalstack.com/user/sign_up"
-echo "Next, Login to your account at intel.criticalstack.com and copy your API key.  Input that below:"
-read apikey
-cd ~
-#Install Critical Stack
-clear
-echo "Installing Critical Stack Agent for Raspberry pi .arm client"
-sudo wget https://intel.criticalstack.com/client/critical-stack-intel-arm.deb --no-check-certificate
-sudo dpkg -i critical-stack-intel-arm.deb
-sudo -u critical-stack critical-stack-intel api $apikey
-sudo rm critical-stack-intel-arm.deb
-echo "Done!  Be sure to browse to: https://github.com/musicmancorley/BriarIDS/wiki/Bro-demo-using-Critical-Stack-agent for guidance in using bro"
+
