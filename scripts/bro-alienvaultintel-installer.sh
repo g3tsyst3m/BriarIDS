@@ -24,7 +24,10 @@ fi
 
 # Get APIKEY
 echo
-echo "Please provide an Alienvault OTX API key! [ENTER]:"
+echo "First, be sure to browse here and sign up for Alienvault OTX: https://otx.alienvault.com/"
+echo "Next, subscribe to a feed/pulse: https://otx.alienvault.com/user/AlienVault/pulses"
+echo "Ok, now copy your Alienvault Api key"
+echo "and please paste your Alienvault OTX API key here [ENTER]:"
 echo "(Input field is hidden)"
 echo
 read -s APIKEY
