@@ -134,9 +134,20 @@ class UiForm:
         self.pushButton.setStyleSheet("font: 11pt \"Lucida Handwriting\";")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(140, 430, 191, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(140, 425, 191, 31))
         self.pushButton_2.setStyleSheet("font: 11pt \"Lucida Handwriting\";")
         self.pushButton_2.setObjectName("pushButton_2")
+  
+        self.pushButton_6 = QtWidgets.QPushButton(Form)
+        self.pushButton_6.setGeometry(QtCore.QRect(140, 460, 90, 31))
+        self.pushButton_6.setStyleSheet("font: 11pt \"Lucida Handwriting\";")
+        self.pushButton_6.setObjectName("pushButton_6")
+        
+        self.pushButton_7 = QtWidgets.QPushButton(Form)
+        self.pushButton_7.setGeometry(QtCore.QRect(241, 460, 90, 31))
+        self.pushButton_7.setStyleSheet("font: 11pt \"Lucida Handwriting\";")
+        self.pushButton_7.setObjectName("pushButton_7")
+        
         self.progressBar = QtWidgets.QProgressBar(Form)
         self.progressBar.setEnabled(True)
         self.progressBar.hide()
@@ -145,7 +156,7 @@ class UiForm:
         self.progressBar.setTextVisible(True)
         self.progressBar.setObjectName("progressBar")
         self.pushButton_3 = QtWidgets.QPushButton(Form)
-        self.pushButton_3.setGeometry(QtCore.QRect(140, 490, 191, 51))
+        self.pushButton_3.setGeometry(QtCore.QRect(140, 495, 191, 51))
         self.pushButton_3.setStyleSheet("font: 11pt \"Lucida Handwriting\";")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_5 = QtWidgets.QPushButton(Form)
@@ -191,6 +202,14 @@ class UiForm:
         self.pushButton_2.setText(_translate("Form", "Run Suricata"))
         self.pushButton_2.clicked.connect(self.runtheprog)
 
+        self.pushButton_6.setToolTip(_translate("Form", "Run Bro"))
+        self.pushButton_6.setText(_translate("Form", "Run Bro"))
+        self.pushButton_6.clicked.connect(self.runbro)
+
+        self.pushButton_7.setToolTip(_translate("Form", "Stop Bro"))
+        self.pushButton_7.setText(_translate("Form", "Stop Bro"))
+        self.pushButton_7.clicked.connect(self.stopbro)
+ 
         retvalue3=os.system("ls /opt/nsm/bro/share/bro/policy/bro-otx/otx.dat")
         if retvalue3 != 0:
             self.pushButton_5.setToolTip(_translate("Form", "Configure Alienvault Intel Feed"))
@@ -259,6 +278,17 @@ class UiForm:
         data=float(data)
         self.progressBar.setFormat("%.2f%%" % data)
         self.progressBar.setValue(data)
+
+    def runbro(self):
+        """Starts bro when 'Run Bro' button pressed"""
+        mycommand = '/opt/nsm/bro/bin/broctl start'
+        os.system("sudo x-terminal-emulator -e " + mycommand)
+
+    def stopbro(self):
+        """Stops bro when 'Stop Bro' button pressed"""
+        mycommand = '/opt/nsm/bro/bin/broctl stop'
+        os.system("sudo x-terminal-emulator -e " + mycommand)
+
     def runtheprog(self):
         """Start's suricata when 'Run Suricata' button pressed"""
         
