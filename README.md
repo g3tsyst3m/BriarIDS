@@ -21,8 +21,6 @@ Thanks as always for supporting BriarIDS <br>
 Check out the new Donors page!  I huge thanks to all those who support BriarIDS: [**Donors**](https://github.com/g3tsyst3m/BriarIDS/wiki/Donors)<br>
 * Also be sure to check out the [**WIKI**](https://github.com/g3tsyst3m/BriarIDS/wiki) for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information. *
 
-Feeling generous?  Why not shoot me a $1, $5, or whatever your heart compels you to give, and I'll add it to the Briar fund.  I'd like to test out some additional hardware TAP devices down the road and other complimentary hardware solutions.  This would allow for more extensive logging and with your help we can make this goal a reality!
-
 Thank you all for the donations received in the last year.  I do truly appreciate your support!
 
 If BriarIDS is used for educational purposes in the classroom setting (ie. Network Security courses, etc) please send me some feedback if you don't mind, letting me know how it cooperated.  Thanks!
