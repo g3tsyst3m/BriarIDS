@@ -19,26 +19,21 @@ Thanks as always for supporting BriarIDS <br>
 -Robbie
 <hr>
 
-Check out the new Donors page!  I huge thanks to all those who support BriarIDS: [**Donors**](https://github.com/musicmancorley/BriarIDS/wiki/Donors)<br>
-I can also be reached at [**BriarIDS Google Groups**](https://groups.google.com/forum/#!forum/briarids).  Feel free to join the group to collaborate and contribute on any and all discussion matters surrounding BriarIDS!<br>
-*Also be sure to check out the [**WIKI**](https://github.com/musicmancorley/BriarIDS/wiki) for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information.  Also, I've just recently rolled out [a web Frontend for viewing logs captured by suricata](https://github.com/musicmancorley/TheBriarPatch).  Please do [check it out](https://github.com/musicmancorley/TheBriarPatch) and let me know what you think!*
+Check out the new Donors page!  I huge thanks to all those who support BriarIDS: [**Donors**](https://github.com/g3tsyst3m/BriarIDS/wiki/Donors)<br>
+* Also be sure to check out the [**WIKI**](https://github.com/g3tsyst3m/BriarIDS/wiki) for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information. *
 
 Feeling generous?  Why not shoot me a $1, $5, or whatever your heart compels you to give, and I'll add it to the Briar fund.  I'd like to test out some additional hardware TAP devices down the road and other complimentary hardware solutions.  This would allow for more extensive logging and with your help we can make this goal a reality!
-
-- Donate $1: https://www.paypal.me/BriarIDS/1
-- Donate $5  https://www.paypal.me/BriarIDS/5
-- Customize your donation: https://www.paypal.me/BriarIDS/
 
 Thank you all for the donations received in the last year.  I do truly appreciate your support!
 
 If BriarIDS is used for educational purposes in the classroom setting (ie. Network Security courses, etc) please send me some feedback if you don't mind, letting me know how it cooperated.  Thanks!
-Here's my email: musicmancorley@gmail.com
+Here's my email: g3tsyst3m@gmail.com
 
 ## Introduction
 
 A simple yet effective IDS for the Raspberry PI.  BriarIDS is configured to work with Raspbian and takes advantage of the PyQT GUI frontend for an all-in-one solution that monitors your home network.  Bro is now integrated into the BriarIDS GUI for additional logging options.  Snorby is still a work in progress concerning an automated installation.  Will post progress notes on Wordpress site periodically.  
 
-<img src="https://github.com/musicmancorley/BriarIDS/blob/master/images/Briar.PNG?raw=true" style="float:right">
+<img src="https://github.com/g3tsyst3m/BriarIDS/blob/master/images/Briar.PNG?raw=true" style="float:right">
 
 ## Why the name BriarIDS?
 
