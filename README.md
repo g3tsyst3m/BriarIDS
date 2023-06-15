@@ -16,7 +16,6 @@ In the words of Frank Costanza, I'm back Baby! It's been a long time since I've 
  - Implemented Alienvault intel feeds for Bro, which replaced the critical stack intel feeds<br>
       
 Thanks as always for supporting BriarIDS <br>
--Robbie
 <hr>
 
 Check out the new Donors page!  I huge thanks to all those who support BriarIDS: [**Donors**](https://github.com/g3tsyst3m/BriarIDS/wiki/Donors)<br>
