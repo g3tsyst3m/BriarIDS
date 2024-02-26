@@ -1,23 +1,5 @@
 # BriarIDS
 
-
-## UPDATE 6/18/2018
-<hr>
-In the words of Frank Costanza, I'm back Baby! It's been a long time since I've had the chance to visit this project.  I've been trying for my CISSP for 2 years now.  TL;DR, I passed.  Now that I can breathe again, here are some changes I've made recently:
-
- - Included support for Ubuntu for the raspberry pi in addition to Raspbian/Debian based distros.<br>
- - Added in support for a progress bar to appear indicating status of installation for Bro and Suricata installations!
- - Added in automatic monitoring interface detection and included email notifications for TheBriarPatch.<br>
- - Now includes the latest suricata version, 4.0.4<br>
- - Updated from PyQt4 to PyQt5<br>
- - Implemented threading<br>
- - Updated to latest version of Bro<br>
- - Now installed with support for md5 and sha256 file hasing for malicious file detection<br>
- - Implemented Alienvault intel feeds for Bro, which replaced the critical stack intel feeds<br>
-      
-Thanks as always for supporting BriarIDS <br>
-<hr>
-
 Check out the new Donors page!  I huge thanks to all those who support BriarIDS: [**Donors**](https://github.com/g3tsyst3m/BriarIDS/wiki/Donors)<br>
 * Also be sure to check out the [**WIKI**](https://github.com/g3tsyst3m/BriarIDS/wiki) for detailed instructions, demo videos, etc.  I've updated it with plenty of useful information. *
 
